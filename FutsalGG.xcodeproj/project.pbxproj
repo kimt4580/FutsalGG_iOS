@@ -6,23 +6,59 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8A3E22CF2D8BA3A600EA1646 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22CE2D8BA3A600EA1646 /* ComposableArchitecture */; };
+		8A3E22D22D8BA3CD00EA1646 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D12D8BA3CD00EA1646 /* CombineMoya */; };
+		8A3E22D42D8BA3CD00EA1646 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D32D8BA3CD00EA1646 /* Moya */; };
+		8A3E22D62D8BA3CD00EA1646 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D52D8BA3CD00EA1646 /* ReactiveMoya */; };
+		8A3E22D82D8BA3CD00EA1646 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D72D8BA3CD00EA1646 /* RxMoya */; };
+		8A3E22DB2D8BA42E00EA1646 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22DA2D8BA42E00EA1646 /* FirebaseAuth */; };
+		8A3E22DD2D8BA42E00EA1646 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22DC2D8BA42E00EA1646 /* FirebaseCrashlytics */; };
+		8A3E22DF2D8BA42E00EA1646 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22DE2D8BA42E00EA1646 /* FirebaseMessaging */; };
+		8A3E23052D8BA56000EA1646 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E23022D8BA56000EA1646 /* ContentView.swift */; };
+		8A3E23062D8BA56000EA1646 /* FutsalGGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E23032D8BA56000EA1646 /* FutsalGGApp.swift */; };
+		8A3E23082D8BA56000EA1646 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22F62D8BA56000EA1646 /* Pretendard-Black.otf */; };
+		8A3E23092D8BA56000EA1646 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22F72D8BA56000EA1646 /* Pretendard-Bold.otf */; };
+		8A3E230A2D8BA56000EA1646 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22F82D8BA56000EA1646 /* Pretendard-ExtraBold.otf */; };
+		8A3E230B2D8BA56000EA1646 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22F92D8BA56000EA1646 /* Pretendard-ExtraLight.otf */; };
+		8A3E230C2D8BA56000EA1646 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22FA2D8BA56000EA1646 /* Pretendard-Light.otf */; };
+		8A3E230D2D8BA56000EA1646 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22FB2D8BA56000EA1646 /* Pretendard-Medium.otf */; };
+		8A3E230E2D8BA56000EA1646 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22FC2D8BA56000EA1646 /* Pretendard-Regular.otf */; };
+		8A3E230F2D8BA56000EA1646 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22FD2D8BA56000EA1646 /* Pretendard-SemiBold.otf */; };
+		8A3E23102D8BA56000EA1646 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22FE2D8BA56000EA1646 /* Pretendard-Thin.otf */; };
+		8A3E23112D8BA56000EA1646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E23012D8BA56000EA1646 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8A3E22AA2D8B89DB00EA1646 /* FutsalGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutsalGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A3E22F62D8BA56000EA1646 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		8A3E22F72D8BA56000EA1646 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		8A3E22F82D8BA56000EA1646 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		8A3E22F92D8BA56000EA1646 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		8A3E22FA2D8BA56000EA1646 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		8A3E22FB2D8BA56000EA1646 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		8A3E22FC2D8BA56000EA1646 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		8A3E22FD2D8BA56000EA1646 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		8A3E22FE2D8BA56000EA1646 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		8A3E23012D8BA56000EA1646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A3E23022D8BA56000EA1646 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8A3E23032D8BA56000EA1646 /* FutsalGGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutsalGGApp.swift; sourceTree = "<group>"; };
+		8A3E231A2D8BA7F800EA1646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		8A3E22AC2D8B89DB00EA1646 /* FutsalGG */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FutsalGG;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8A3E22A72D8B89DB00EA1646 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3E22DF2D8BA42E00EA1646 /* FirebaseMessaging in Frameworks */,
+				8A3E22D82D8BA3CD00EA1646 /* RxMoya in Frameworks */,
+				8A3E22DB2D8BA42E00EA1646 /* FirebaseAuth in Frameworks */,
+				8A3E22D22D8BA3CD00EA1646 /* CombineMoya in Frameworks */,
+				8A3E22DD2D8BA42E00EA1646 /* FirebaseCrashlytics in Frameworks */,
+				8A3E22D62D8BA3CD00EA1646 /* ReactiveMoya in Frameworks */,
+				8A3E22CF2D8BA3A600EA1646 /* ComposableArchitecture in Frameworks */,
+				8A3E22D42D8BA3CD00EA1646 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +68,7 @@
 		8A3E22A12D8B89DB00EA1646 = {
 			isa = PBXGroup;
 			children = (
-				8A3E22AC2D8B89DB00EA1646 /* FutsalGG */,
+				8A3E23042D8BA56000EA1646 /* FutsalGG */,
 				8A3E22AB2D8B89DB00EA1646 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +79,82 @@
 				8A3E22AA2D8B89DB00EA1646 /* FutsalGG.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8A3E22FF2D8BA56000EA1646 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E22F62D8BA56000EA1646 /* Pretendard-Black.otf */,
+				8A3E22F72D8BA56000EA1646 /* Pretendard-Bold.otf */,
+				8A3E22F82D8BA56000EA1646 /* Pretendard-ExtraBold.otf */,
+				8A3E22F92D8BA56000EA1646 /* Pretendard-ExtraLight.otf */,
+				8A3E22FA2D8BA56000EA1646 /* Pretendard-Light.otf */,
+				8A3E22FB2D8BA56000EA1646 /* Pretendard-Medium.otf */,
+				8A3E22FC2D8BA56000EA1646 /* Pretendard-Regular.otf */,
+				8A3E22FD2D8BA56000EA1646 /* Pretendard-SemiBold.otf */,
+				8A3E22FE2D8BA56000EA1646 /* Pretendard-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8A3E23002D8BA56000EA1646 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E231A2D8BA7F800EA1646 /* Info.plist */,
+				8A3E23012D8BA56000EA1646 /* Assets.xcassets */,
+				8A3E22FF2D8BA56000EA1646 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8A3E23042D8BA56000EA1646 /* FutsalGG */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E23032D8BA56000EA1646 /* FutsalGGApp.swift */,
+				8A3E23132D8BA59100EA1646 /* Presentation */,
+				8A3E23192D8BA60500EA1646 /* Domain */,
+				8A3E23182D8BA60500EA1646 /* Data */,
+				8A3E23172D8BA60500EA1646 /* Utilities */,
+				8A3E231C2D8BA8D200EA1646 /* Extensions */,
+				8A3E23002D8BA56000EA1646 /* Resources */,
+			);
+			path = FutsalGG;
+			sourceTree = "<group>";
+		};
+		8A3E23132D8BA59100EA1646 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E23022D8BA56000EA1646 /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8A3E23172D8BA60500EA1646 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8A3E23182D8BA60500EA1646 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8A3E23192D8BA60500EA1646 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		8A3E231C2D8BA8D200EA1646 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,11 +172,16 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				8A3E22AC2D8B89DB00EA1646 /* FutsalGG */,
-			);
 			name = FutsalGG;
 			packageProductDependencies = (
+				8A3E22CE2D8BA3A600EA1646 /* ComposableArchitecture */,
+				8A3E22D12D8BA3CD00EA1646 /* CombineMoya */,
+				8A3E22D32D8BA3CD00EA1646 /* Moya */,
+				8A3E22D52D8BA3CD00EA1646 /* ReactiveMoya */,
+				8A3E22D72D8BA3CD00EA1646 /* RxMoya */,
+				8A3E22DA2D8BA42E00EA1646 /* FirebaseAuth */,
+				8A3E22DC2D8BA42E00EA1646 /* FirebaseCrashlytics */,
+				8A3E22DE2D8BA42E00EA1646 /* FirebaseMessaging */,
 			);
 			productName = FutsalGG;
 			productReference = 8A3E22AA2D8B89DB00EA1646 /* FutsalGG.app */;
@@ -86,14 +203,19 @@
 				};
 			};
 			buildConfigurationList = 8A3E22A52D8B89DB00EA1646 /* Build configuration list for PBXProject "FutsalGG" */;
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ko,
 			);
 			mainGroup = 8A3E22A12D8B89DB00EA1646;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8A3E22CD2D8BA3A600EA1646 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				8A3E22D02D8BA3CD00EA1646 /* XCRemoteSwiftPackageReference "Moya" */,
+				8A3E22D92D8BA42E00EA1646 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8A3E22AB2D8B89DB00EA1646 /* Products */;
 			projectDirPath = "";
@@ -109,6 +231,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3E23082D8BA56000EA1646 /* Pretendard-Black.otf in Resources */,
+				8A3E23092D8BA56000EA1646 /* Pretendard-Bold.otf in Resources */,
+				8A3E230A2D8BA56000EA1646 /* Pretendard-ExtraBold.otf in Resources */,
+				8A3E230B2D8BA56000EA1646 /* Pretendard-ExtraLight.otf in Resources */,
+				8A3E230C2D8BA56000EA1646 /* Pretendard-Light.otf in Resources */,
+				8A3E230D2D8BA56000EA1646 /* Pretendard-Medium.otf in Resources */,
+				8A3E230E2D8BA56000EA1646 /* Pretendard-Regular.otf in Resources */,
+				8A3E230F2D8BA56000EA1646 /* Pretendard-SemiBold.otf in Resources */,
+				8A3E23102D8BA56000EA1646 /* Pretendard-Thin.otf in Resources */,
+				8A3E23112D8BA56000EA1646 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3E23052D8BA56000EA1646 /* ContentView.swift in Sources */,
+				8A3E23062D8BA56000EA1646 /* FutsalGGApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +389,9 @@
 				DEVELOPMENT_TEAM = 44X337TR62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "풋살GG";
+				INFOPLIST_FILE = FutsalGG/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "풋살GG (DEV)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -268,7 +404,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.taehun.FutsalGG;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taehun.FutsalGG.Dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -291,7 +427,9 @@
 				DEVELOPMENT_TEAM = 44X337TR62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "풋살GG";
+				INFOPLIST_FILE = FutsalGG/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "풋살GG (DEV)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -338,6 +476,76 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8A3E22CD2D8BA3A600EA1646 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.0;
+			};
+		};
+		8A3E22D02D8BA3CD00EA1646 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		8A3E22D92D8BA42E00EA1646 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A3E22CE2D8BA3A600EA1646 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22CD2D8BA3A600EA1646 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		8A3E22D12D8BA3CD00EA1646 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22D02D8BA3CD00EA1646 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		8A3E22D32D8BA3CD00EA1646 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22D02D8BA3CD00EA1646 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		8A3E22D52D8BA3CD00EA1646 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22D02D8BA3CD00EA1646 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		8A3E22D72D8BA3CD00EA1646 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22D02D8BA3CD00EA1646 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		8A3E22DA2D8BA42E00EA1646 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22D92D8BA42E00EA1646 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8A3E22DC2D8BA42E00EA1646 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22D92D8BA42E00EA1646 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		8A3E22DE2D8BA42E00EA1646 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3E22D92D8BA42E00EA1646 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A3E22A22D8B89DB00EA1646 /* Project object */;
 }
