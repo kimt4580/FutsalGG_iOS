@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  FutsalGG
 //
-//  Created by Lukus on 3/20/25.
+//  Created by 김태훈 on 3/20/25.
 //
 
 import SwiftUI
