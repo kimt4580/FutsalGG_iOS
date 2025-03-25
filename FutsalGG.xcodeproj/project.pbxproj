@@ -27,6 +27,25 @@
 		8A3E230F2D8BA56000EA1646 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22FD2D8BA56000EA1646 /* Pretendard-SemiBold.otf */; };
 		8A3E23102D8BA56000EA1646 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E22FE2D8BA56000EA1646 /* Pretendard-Thin.otf */; };
 		8A3E23112D8BA56000EA1646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E23012D8BA56000EA1646 /* Assets.xcassets */; };
+		8A3E23222D8CE59700EA1646 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E23202D8CE59700EA1646 /* LoginPage.swift */; };
+		8A3E23242D8CE81A00EA1646 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E23232D8CE81A00EA1646 /* Color+Extension.swift */; };
+		8A3E23262D8CE82500EA1646 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E23252D8CE82500EA1646 /* View+Extension.swift */; };
+		8A3E232A2D8CEACA00EA1646 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E23292D8CEACA00EA1646 /* Contents.json */; };
+		8A79A9602D924320005D7BD5 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A95F2D924320005D7BD5 /* LoginResponse.swift */; };
+		8A79A9622D924356005D7BD5 /* LoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9612D924356005D7BD5 /* LoginResponseDTO.swift */; };
+		8A79A9642D925A06005D7BD5 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9632D925A06005D7BD5 /* AppConstant.swift */; };
+		8A79A96A2D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9682D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift */; };
+		8A79A9722D925B5D005D7BD5 /* TokenRefreshResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9702D925B5D005D7BD5 /* TokenRefreshResponse.swift */; };
+		8A79A9972D926917005D7BD5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9942D926917005D7BD5 /* NetworkService.swift */; };
+		8A79A99B2D92691B005D7BD5 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9982D92691B005D7BD5 /* AuthEndpoint.swift */; };
+		8A79A99D2D927685005D7BD5 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A99C2D927685005D7BD5 /* TokenManager.swift */; };
+		8A79A99F2D9276B6005D7BD5 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A99E2D9276B6005D7BD5 /* PreferenceManager.swift */; };
+		8A79A9A22D927742005D7BD5 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79A9A12D927742005D7BD5 /* KeychainSwift */; };
+		8A79A9A42D927E33005D7BD5 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9A32D927E33005D7BD5 /* APIEndpoint.swift */; };
+		8A79A9A62D927E61005D7BD5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9A52D927E61005D7BD5 /* NetworkError.swift */; };
+		8A84BBA52D8CECA800942D94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */; };
+		8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */; };
+		8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68E42D915822001D49C0 /* LoginRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +63,24 @@
 		8A3E23022D8BA56000EA1646 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A3E23032D8BA56000EA1646 /* FutsalGGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutsalGGApp.swift; sourceTree = "<group>"; };
 		8A3E231A2D8BA7F800EA1646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A3E23202D8CE59700EA1646 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		8A3E23232D8CE81A00EA1646 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		8A3E23252D8CE82500EA1646 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		8A3E23292D8CEACA00EA1646 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		8A79A95F2D924320005D7BD5 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		8A79A9612D924356005D7BD5 /* LoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDTO.swift; sourceTree = "<group>"; };
+		8A79A9632D925A06005D7BD5 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		8A79A9682D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshResponseDTO.swift; sourceTree = "<group>"; };
+		8A79A9702D925B5D005D7BD5 /* TokenRefreshResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshResponse.swift; sourceTree = "<group>"; };
+		8A79A9942D926917005D7BD5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8A79A9982D92691B005D7BD5 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
+		8A79A99C2D927685005D7BD5 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		8A79A99E2D9276B6005D7BD5 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		8A79A9A32D927E33005D7BD5 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		8A79A9A52D927E61005D7BD5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
+		8ACC68E42D915822001D49C0 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A79A9A22D927742005D7BD5 /* KeychainSwift in Frameworks */,
 				8A3E22DF2D8BA42E00EA1646 /* FirebaseMessaging in Frameworks */,
 				8A3E22D82D8BA3CD00EA1646 /* RxMoya in Frameworks */,
 				8A3E22DB2D8BA42E00EA1646 /* FirebaseAuth in Frameworks */,
@@ -100,7 +138,6 @@
 		8A3E23002D8BA56000EA1646 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8A3E231A2D8BA7F800EA1646 /* Info.plist */,
 				8A3E23012D8BA56000EA1646 /* Assets.xcassets */,
 				8A3E22FF2D8BA56000EA1646 /* Fonts */,
 			);
@@ -110,13 +147,16 @@
 		8A3E23042D8BA56000EA1646 /* FutsalGG */ = {
 			isa = PBXGroup;
 			children = (
+				8A3E231A2D8BA7F800EA1646 /* Info.plist */,
 				8A3E23032D8BA56000EA1646 /* FutsalGGApp.swift */,
+				8A79A9632D925A06005D7BD5 /* AppConstant.swift */,
 				8A3E23132D8BA59100EA1646 /* Presentation */,
 				8A3E23192D8BA60500EA1646 /* Domain */,
 				8A3E23182D8BA60500EA1646 /* Data */,
 				8A3E23172D8BA60500EA1646 /* Utilities */,
 				8A3E231C2D8BA8D200EA1646 /* Extensions */,
 				8A3E23002D8BA56000EA1646 /* Resources */,
+				8A3E23282D8CEAA100EA1646 /* Preview Content */,
 			);
 			path = FutsalGG;
 			sourceTree = "<group>";
@@ -124,6 +164,7 @@
 		8A3E23132D8BA59100EA1646 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8A3E23212D8CE59700EA1646 /* Login */,
 				8A3E23022D8BA56000EA1646 /* ContentView.swift */,
 			);
 			path = Presentation;
@@ -132,6 +173,8 @@
 		8A3E23172D8BA60500EA1646 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8A79A9952D926917005D7BD5 /* Network */,
+				8A79A9852D92604E005D7BD5 /* Preference */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -139,6 +182,8 @@
 		8A3E23182D8BA60500EA1646 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8A79A99A2D92691B005D7BD5 /* Network */,
+				8ACC68DE2D91566D001D49C0 /* DTOs */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -146,6 +191,7 @@
 		8A3E23192D8BA60500EA1646 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				8ACC68E52D915822001D49C0 /* Entites */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -153,8 +199,114 @@
 		8A3E231C2D8BA8D200EA1646 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8A3E23232D8CE81A00EA1646 /* Color+Extension.swift */,
+				8A3E23252D8CE82500EA1646 /* View+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A3E23212D8CE59700EA1646 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E23202D8CE59700EA1646 /* LoginPage.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8A3E23282D8CEAA100EA1646 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E23292D8CEACA00EA1646 /* Contents.json */,
+				8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8A79A9692D925A6D005D7BD5 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				8A79A9682D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		8A79A96C2D925A93005D7BD5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC68E42D915822001D49C0 /* LoginRequest.swift */,
+				8A79A95F2D924320005D7BD5 /* LoginResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8A79A9712D925B5D005D7BD5 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				8A79A9702D925B5D005D7BD5 /* TokenRefreshResponse.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		8A79A9852D92604E005D7BD5 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				8A79A99E2D9276B6005D7BD5 /* PreferenceManager.swift */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		8A79A9952D926917005D7BD5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8A79A9942D926917005D7BD5 /* NetworkService.swift */,
+				8A79A99C2D927685005D7BD5 /* TokenManager.swift */,
+				8A79A9A52D927E61005D7BD5 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8A79A9992D92691B005D7BD5 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				8A79A9A32D927E33005D7BD5 /* APIEndpoint.swift */,
+				8A79A9982D92691B005D7BD5 /* AuthEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		8A79A99A2D92691B005D7BD5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8A79A9992D92691B005D7BD5 /* Endpoints */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8A7B73932D92401E00A65ED9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */,
+				8A79A9612D924356005D7BD5 /* LoginResponseDTO.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8ACC68DE2D91566D001D49C0 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				8A7B73932D92401E00A65ED9 /* Login */,
+				8A79A9692D925A6D005D7BD5 /* Token */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		8ACC68E52D915822001D49C0 /* Entites */ = {
+			isa = PBXGroup;
+			children = (
+				8A79A96C2D925A93005D7BD5 /* Login */,
+				8A79A9712D925B5D005D7BD5 /* Token */,
+			);
+			path = Entites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +334,7 @@
 				8A3E22DA2D8BA42E00EA1646 /* FirebaseAuth */,
 				8A3E22DC2D8BA42E00EA1646 /* FirebaseCrashlytics */,
 				8A3E22DE2D8BA42E00EA1646 /* FirebaseMessaging */,
+				8A79A9A12D927742005D7BD5 /* KeychainSwift */,
 			);
 			productName = FutsalGG;
 			productReference = 8A3E22AA2D8B89DB00EA1646 /* FutsalGG.app */;
@@ -215,6 +368,7 @@
 				8A3E22CD2D8BA3A600EA1646 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				8A3E22D02D8BA3CD00EA1646 /* XCRemoteSwiftPackageReference "Moya" */,
 				8A3E22D92D8BA42E00EA1646 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8A79A9A02D927742005D7BD5 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8A3E22AB2D8B89DB00EA1646 /* Products */;
@@ -235,11 +389,13 @@
 				8A3E23092D8BA56000EA1646 /* Pretendard-Bold.otf in Resources */,
 				8A3E230A2D8BA56000EA1646 /* Pretendard-ExtraBold.otf in Resources */,
 				8A3E230B2D8BA56000EA1646 /* Pretendard-ExtraLight.otf in Resources */,
+				8A84BBA52D8CECA800942D94 /* Preview Assets.xcassets in Resources */,
 				8A3E230C2D8BA56000EA1646 /* Pretendard-Light.otf in Resources */,
 				8A3E230D2D8BA56000EA1646 /* Pretendard-Medium.otf in Resources */,
 				8A3E230E2D8BA56000EA1646 /* Pretendard-Regular.otf in Resources */,
 				8A3E230F2D8BA56000EA1646 /* Pretendard-SemiBold.otf in Resources */,
 				8A3E23102D8BA56000EA1646 /* Pretendard-Thin.otf in Resources */,
+				8A3E232A2D8CEACA00EA1646 /* Contents.json in Resources */,
 				8A3E23112D8BA56000EA1646 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,8 +407,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A79A9722D925B5D005D7BD5 /* TokenRefreshResponse.swift in Sources */,
+				8A79A9A42D927E33005D7BD5 /* APIEndpoint.swift in Sources */,
+				8A79A99F2D9276B6005D7BD5 /* PreferenceManager.swift in Sources */,
+				8A79A99D2D927685005D7BD5 /* TokenManager.swift in Sources */,
+				8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */,
+				8A79A9642D925A06005D7BD5 /* AppConstant.swift in Sources */,
 				8A3E23052D8BA56000EA1646 /* ContentView.swift in Sources */,
+				8A79A9972D926917005D7BD5 /* NetworkService.swift in Sources */,
+				8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */,
+				8A3E23222D8CE59700EA1646 /* LoginPage.swift in Sources */,
+				8A79A9602D924320005D7BD5 /* LoginResponse.swift in Sources */,
+				8A79A9622D924356005D7BD5 /* LoginResponseDTO.swift in Sources */,
+				8A3E23262D8CE82500EA1646 /* View+Extension.swift in Sources */,
+				8A79A99B2D92691B005D7BD5 /* AuthEndpoint.swift in Sources */,
 				8A3E23062D8BA56000EA1646 /* FutsalGGApp.swift in Sources */,
+				8A3E23242D8CE81A00EA1646 /* Color+Extension.swift in Sources */,
+				8A79A96A2D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift in Sources */,
+				8A79A9A62D927E61005D7BD5 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -368,6 +541,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -386,7 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FutsalGG/Preview Content\"";
-				DEVELOPMENT_TEAM = 44X337TR62;
+				DEVELOPMENT_TEAM = PM6PX4YGD5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FutsalGG/Info.plist;
@@ -404,7 +578,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.taehun.FutsalGG.Dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swipe.FutsalGG.Dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -424,7 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FutsalGG/Preview Content\"";
-				DEVELOPMENT_TEAM = 44X337TR62;
+				DEVELOPMENT_TEAM = PM6PX4YGD5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FutsalGG/Info.plist;
@@ -442,7 +616,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.taehun.FutsalGG;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swipe.FutsalGG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -502,6 +676,14 @@
 				minimumVersion = 11.10.0;
 			};
 		};
+		8A79A9A02D927742005D7BD5 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -544,6 +726,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A3E22D92D8BA42E00EA1646 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		8A79A9A12D927742005D7BD5 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A79A9A02D927742005D7BD5 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
