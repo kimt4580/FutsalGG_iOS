@@ -52,7 +52,7 @@ struct LoginPage: View {
             Image("login_background")
                 .resizable()
                 .scaledToFill()
-                .ignoresSafeArea()
+                .ignoresSafeArea(edges: .vertical)
         )
     }
 }
