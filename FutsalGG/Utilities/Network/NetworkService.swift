@@ -64,7 +64,7 @@ final class NetworkService: NetworkServicing {
     }
     
     private func handleTokenRefresh<T: Decodable, E: APIEndpoint>(_ endpoint: E) async throws -> T {
-        guard let refreshToken = tokenManager.refreshToken else {
+        guard (tokenManager.refreshToken) != nil else {
             throw NetworkError.unauthorized
         }
         
