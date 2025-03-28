@@ -49,6 +49,8 @@
 		8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */; };
 		8A821E212D96616D00168D69 /* TeamSearchResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E202D96616D00168D69 /* TeamSearchResponseDTO.swift */; };
 		8A821E232D9661C300168D69 /* TeamSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E222D9661C300168D69 /* TeamSearchResponse.swift */; };
+		8A821E252D96839A00168D69 /* MainResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E242D96839A00168D69 /* MainResponseDTO.swift */; };
+		8A821E272D96845800168D69 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E262D96845800168D69 /* MainResponse.swift */; };
 		8A84BBA52D8CECA800942D94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */; };
 		8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */; };
 		8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68E42D915822001D49C0 /* LoginRequest.swift */; };
@@ -97,6 +99,8 @@
 		8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadURLResponseDTO.swift; sourceTree = "<group>"; };
 		8A821E202D96616D00168D69 /* TeamSearchResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchResponseDTO.swift; sourceTree = "<group>"; };
 		8A821E222D9661C300168D69 /* TeamSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchResponse.swift; sourceTree = "<group>"; };
+		8A821E242D96839A00168D69 /* MainResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponseDTO.swift; sourceTree = "<group>"; };
+		8A821E262D96845800168D69 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		8ACC68E42D915822001D49C0 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				8A821E192D96556A00168D69 /* ImageUploadURLResponse.swift */,
+				8A821E262D96845800168D69 /* MainResponse.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */,
+				8A821E242D96839A00168D69 /* MainResponseDTO.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A821E272D96845800168D69 /* MainResponse.swift in Sources */,
 				8A79A9722D925B5D005D7BD5 /* TokenRefreshResponse.swift in Sources */,
 				8A79A9A42D927E33005D7BD5 /* APIEndpoint.swift in Sources */,
 				8AEFAF5E2D93930400003B36 /* SignUpRequestDTO.swift in Sources */,
@@ -530,6 +537,7 @@
 				8A3E23222D8CE59700EA1646 /* LoginPage.swift in Sources */,
 				8AEFAF6C2D93F02700003B36 /* TeamEndpoint.swift in Sources */,
 				8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */,
+				8A821E252D96839A00168D69 /* MainResponseDTO.swift in Sources */,
 				8A79A9602D924320005D7BD5 /* LoginResponse.swift in Sources */,
 				8A79A9622D924356005D7BD5 /* LoginResponseDTO.swift in Sources */,
 				8A821E232D9661C300168D69 /* TeamSearchResponse.swift in Sources */,
