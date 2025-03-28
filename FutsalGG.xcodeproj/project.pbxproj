@@ -42,6 +42,11 @@
 		8A79A9A22D927742005D7BD5 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79A9A12D927742005D7BD5 /* KeychainSwift */; };
 		8A79A9A42D927E33005D7BD5 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9A32D927E33005D7BD5 /* APIEndpoint.swift */; };
 		8A79A9A62D927E61005D7BD5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79A9A52D927E61005D7BD5 /* NetworkError.swift */; };
+		8A821E132D9636CC00168D69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A821E122D9636CC00168D69 /* GoogleService-Info.plist */; };
+		8A821E152D964D7800168D69 /* TeamMakeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E142D964D7800168D69 /* TeamMakeRequestDTO.swift */; };
+		8A821E172D964D9A00168D69 /* TeamMakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E162D964D9A00168D69 /* TeamMakeRequest.swift */; };
+		8A821E1B2D96556A00168D69 /* ImageUploadURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E192D96556A00168D69 /* ImageUploadURLResponse.swift */; };
+		8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */; };
 		8A84BBA52D8CECA800942D94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */; };
 		8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */; };
 		8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68E42D915822001D49C0 /* LoginRequest.swift */; };
@@ -49,6 +54,9 @@
 		8AEFAF502D93926D00003B36 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFAF4F2D93926D00003B36 /* UserEndpoint.swift */; };
 		8AEFAF562D9392E600003B36 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFAF542D9392E600003B36 /* SignUpRequest.swift */; };
 		8AEFAF5E2D93930400003B36 /* SignUpRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFAF5C2D93930400003B36 /* SignUpRequestDTO.swift */; };
+		8AEFAF692D93E2FE00003B36 /* login_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8AEFAF652D93E2FE00003B36 /* login_background.pdf */; };
+		8AEFAF6A2D93E2FE00003B36 /* logo-main-i.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AEFAF662D93E2FE00003B36 /* logo-main-i.png */; };
+		8AEFAF6C2D93F02700003B36 /* TeamEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFAF6B2D93F02700003B36 /* TeamEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +88,11 @@
 		8A79A99E2D9276B6005D7BD5 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		8A79A9A32D927E33005D7BD5 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		8A79A9A52D927E61005D7BD5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8A821E122D9636CC00168D69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A821E142D964D7800168D69 /* TeamMakeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMakeRequestDTO.swift; sourceTree = "<group>"; };
+		8A821E162D964D9A00168D69 /* TeamMakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMakeRequest.swift; sourceTree = "<group>"; };
+		8A821E192D96556A00168D69 /* ImageUploadURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadURLResponse.swift; sourceTree = "<group>"; };
+		8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadURLResponseDTO.swift; sourceTree = "<group>"; };
 		8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		8ACC68E42D915822001D49C0 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -87,6 +100,9 @@
 		8AEFAF4F2D93926D00003B36 /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
 		8AEFAF542D9392E600003B36 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		8AEFAF5C2D93930400003B36 /* SignUpRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestDTO.swift; sourceTree = "<group>"; };
+		8AEFAF652D93E2FE00003B36 /* login_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = login_background.pdf; sourceTree = "<group>"; };
+		8AEFAF662D93E2FE00003B36 /* logo-main-i.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-main-i.png"; sourceTree = "<group>"; };
+		8AEFAF6B2D93F02700003B36 /* TeamEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +160,7 @@
 		8A3E23002D8BA56000EA1646 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8AEFAF682D93E2FE00003B36 /* Images */,
 				8A3E23012D8BA56000EA1646 /* Assets.xcassets */,
 				8A3E22FF2D8BA56000EA1646 /* Fonts */,
 			);
@@ -153,6 +170,7 @@
 		8A3E23042D8BA56000EA1646 /* FutsalGG */ = {
 			isa = PBXGroup;
 			children = (
+				8A821E122D9636CC00168D69 /* GoogleService-Info.plist */,
 				8A3E231A2D8BA7F800EA1646 /* Info.plist */,
 				8A3E23032D8BA56000EA1646 /* FutsalGGApp.swift */,
 				8A79A9632D925A06005D7BD5 /* AppConstant.swift */,
@@ -277,6 +295,7 @@
 				8A79A9A32D927E33005D7BD5 /* APIEndpoint.swift */,
 				8A79A9982D92691B005D7BD5 /* AuthEndpoint.swift */,
 				8AEFAF4F2D93926D00003B36 /* UserEndpoint.swift */,
+				8AEFAF6B2D93F02700003B36 /* TeamEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -298,9 +317,27 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		8A821E1A2D96556A00168D69 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8A821E192D96556A00168D69 /* ImageUploadURLResponse.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8A821E1E2D96557900168D69 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		8ACC68DE2D91566D001D49C0 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				8A821E1E2D96557900168D69 /* Common */,
+				8AEFAF6E2D93F07E00003B36 /* Team */,
 				8AEFAF5D2D93930400003B36 /* SignUp */,
 				8A7B73932D92401E00A65ED9 /* Login */,
 				8A79A9692D925A6D005D7BD5 /* Token */,
@@ -311,6 +348,8 @@
 		8ACC68E52D915822001D49C0 /* Entites */ = {
 			isa = PBXGroup;
 			children = (
+				8A821E1A2D96556A00168D69 /* Common */,
+				8AEFAF722D93F0FD00003B36 /* Team */,
 				8AEFAF552D9392E600003B36 /* SignUp */,
 				8A79A96C2D925A93005D7BD5 /* Login */,
 				8A79A9712D925B5D005D7BD5 /* Token */,
@@ -332,6 +371,39 @@
 				8AEFAF5C2D93930400003B36 /* SignUpRequestDTO.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		8AEFAF672D93E2FE00003B36 /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				8AEFAF652D93E2FE00003B36 /* login_background.pdf */,
+				8AEFAF662D93E2FE00003B36 /* logo-main-i.png */,
+			);
+			path = Logo;
+			sourceTree = "<group>";
+		};
+		8AEFAF682D93E2FE00003B36 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8AEFAF672D93E2FE00003B36 /* Logo */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8AEFAF6E2D93F07E00003B36 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				8A821E142D964D7800168D69 /* TeamMakeRequestDTO.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		8AEFAF722D93F0FD00003B36 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				8A821E162D964D9A00168D69 /* TeamMakeRequest.swift */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +484,9 @@
 			files = (
 				8A3E23082D8BA56000EA1646 /* Pretendard-Black.otf in Resources */,
 				8A3E23092D8BA56000EA1646 /* Pretendard-Bold.otf in Resources */,
+				8A821E132D9636CC00168D69 /* GoogleService-Info.plist in Resources */,
+				8AEFAF692D93E2FE00003B36 /* login_background.pdf in Resources */,
+				8AEFAF6A2D93E2FE00003B36 /* logo-main-i.png in Resources */,
 				8A3E230A2D8BA56000EA1646 /* Pretendard-ExtraBold.otf in Resources */,
 				8A3E230B2D8BA56000EA1646 /* Pretendard-ExtraLight.otf in Resources */,
 				8A84BBA52D8CECA800942D94 /* Preview Assets.xcassets in Resources */,
@@ -435,14 +510,19 @@
 				8A79A9722D925B5D005D7BD5 /* TokenRefreshResponse.swift in Sources */,
 				8A79A9A42D927E33005D7BD5 /* APIEndpoint.swift in Sources */,
 				8AEFAF5E2D93930400003B36 /* SignUpRequestDTO.swift in Sources */,
+				8A821E172D964D9A00168D69 /* TeamMakeRequest.swift in Sources */,
 				8A79A99F2D9276B6005D7BD5 /* PreferenceManager.swift in Sources */,
 				8A79A99D2D927685005D7BD5 /* TokenManager.swift in Sources */,
 				8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */,
 				8A79A9642D925A06005D7BD5 /* AppConstant.swift in Sources */,
+				8A821E152D964D7800168D69 /* TeamMakeRequestDTO.swift in Sources */,
 				8AEFAF4E2D938DDB00003B36 /* RootView.swift in Sources */,
+				8A821E1B2D96556A00168D69 /* ImageUploadURLResponse.swift in Sources */,
 				8A79A9972D926917005D7BD5 /* NetworkService.swift in Sources */,
 				8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */,
 				8A3E23222D8CE59700EA1646 /* LoginPage.swift in Sources */,
+				8AEFAF6C2D93F02700003B36 /* TeamEndpoint.swift in Sources */,
+				8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */,
 				8A79A9602D924320005D7BD5 /* LoginResponse.swift in Sources */,
 				8A79A9622D924356005D7BD5 /* LoginResponseDTO.swift in Sources */,
 				8A3E23262D8CE82500EA1646 /* View+Extension.swift in Sources */,
