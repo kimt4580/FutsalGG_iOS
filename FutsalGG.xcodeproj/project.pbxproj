@@ -47,6 +47,8 @@
 		8A821E172D964D9A00168D69 /* TeamMakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E162D964D9A00168D69 /* TeamMakeRequest.swift */; };
 		8A821E1B2D96556A00168D69 /* ImageUploadURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E192D96556A00168D69 /* ImageUploadURLResponse.swift */; };
 		8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */; };
+		8A821E212D96616D00168D69 /* TeamSearchResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E202D96616D00168D69 /* TeamSearchResponseDTO.swift */; };
+		8A821E232D9661C300168D69 /* TeamSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A821E222D9661C300168D69 /* TeamSearchResponse.swift */; };
 		8A84BBA52D8CECA800942D94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */; };
 		8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */; };
 		8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68E42D915822001D49C0 /* LoginRequest.swift */; };
@@ -93,6 +95,8 @@
 		8A821E162D964D9A00168D69 /* TeamMakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMakeRequest.swift; sourceTree = "<group>"; };
 		8A821E192D96556A00168D69 /* ImageUploadURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadURLResponse.swift; sourceTree = "<group>"; };
 		8A821E1D2D96557900168D69 /* ImageUploadURLResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadURLResponseDTO.swift; sourceTree = "<group>"; };
+		8A821E202D96616D00168D69 /* TeamSearchResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchResponseDTO.swift; sourceTree = "<group>"; };
+		8A821E222D9661C300168D69 /* TeamSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchResponse.swift; sourceTree = "<group>"; };
 		8A84BBA42D8CECA800942D94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		8ACC68E42D915822001D49C0 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				8A821E142D964D7800168D69 /* TeamMakeRequestDTO.swift */,
+				8A821E202D96616D00168D69 /* TeamSearchResponseDTO.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				8A821E162D964D9A00168D69 /* TeamMakeRequest.swift */,
+				8A821E222D9661C300168D69 /* TeamSearchResponse.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 				8A79A99F2D9276B6005D7BD5 /* PreferenceManager.swift in Sources */,
 				8A79A99D2D927685005D7BD5 /* TokenManager.swift in Sources */,
 				8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */,
+				8A821E212D96616D00168D69 /* TeamSearchResponseDTO.swift in Sources */,
 				8A79A9642D925A06005D7BD5 /* AppConstant.swift in Sources */,
 				8A821E152D964D7800168D69 /* TeamMakeRequestDTO.swift in Sources */,
 				8AEFAF4E2D938DDB00003B36 /* RootView.swift in Sources */,
@@ -525,6 +532,7 @@
 				8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */,
 				8A79A9602D924320005D7BD5 /* LoginResponse.swift in Sources */,
 				8A79A9622D924356005D7BD5 /* LoginResponseDTO.swift in Sources */,
+				8A821E232D9661C300168D69 /* TeamSearchResponse.swift in Sources */,
 				8A3E23262D8CE82500EA1646 /* View+Extension.swift in Sources */,
 				8A79A99B2D92691B005D7BD5 /* AuthEndpoint.swift in Sources */,
 				8AEFAF502D93926D00003B36 /* UserEndpoint.swift in Sources */,

@@ -13,6 +13,8 @@ enum TeamEndpoint {
     case checkNickname(_ nickname: String)
     case getTeamLogoUploadURL
     case uploadTeamLogo(_ uri: String)
+    case searchTeamName(_ teamName: String)
+    case joinTeam(_ teamID: String)
 }
 
 extension TeamEndpoint: APIEndpoint {
@@ -30,6 +32,10 @@ extension TeamEndpoint: APIEndpoint {
             return "/teams/logo-presigned-url"
         case .uploadTeamLogo:
             return "/teams/logo"
+        case .searchTeamName:
+            return "/teams"
+        case .joinTeam:
+            return "/team-members"
         }
     }
     
@@ -43,6 +49,10 @@ extension TeamEndpoint: APIEndpoint {
             return .get
         case .uploadTeamLogo:
             return .patch
+        case .searchTeamName:
+            return .get
+        case .joinTeam:
+            return .post
         }
     }
     
@@ -51,11 +61,24 @@ extension TeamEndpoint: APIEndpoint {
         case .makeTeam(let request):
             return .requestJSONEncodable(request)
         case .checkNickname(let nickname):
-            return .requestParameters(parameters: ["nickname" : nickname], encoding: URLEncoding.queryString)
+            return .requestParameters(
+                parameters: ["nickname" : nickname],
+                encoding: URLEncoding.queryString
+            )
         case .getTeamLogoUploadURL:
             return .requestPlain
         case .uploadTeamLogo(let uri):
             return .requestJSONEncodable(uri)
+        case .searchTeamName(let teamName):
+            return .requestParameters(
+                parameters: ["name" : teamName],
+                encoding: URLEncoding.queryString
+            )
+        case .joinTeam(let teamID):
+            return .requestParameters(
+                parameters: ["team_id" : teamID],
+                encoding: URLEncoding.queryString
+            )
         }
     }
 }
