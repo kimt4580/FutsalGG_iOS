@@ -10,8 +10,8 @@ import Foundation
 struct AppConstant {
     static let shared = AppConstant()
     
-    let BASE_URL = ""
-    let DEV_URL: String = ""
+    let BASE_URL = "https://futsalgg.duckdns.org/api"
+    let DEV_URL: String = "https://futsalgg.duckdns.org/api"
     
     let TERM_URL = ""
     let PRIVICY_URL = ""
