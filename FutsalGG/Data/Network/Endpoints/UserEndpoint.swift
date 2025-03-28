@@ -51,7 +51,10 @@ extension UserEndpoint: APIEndpoint {
         case .signUp(let request):
             return .requestJSONEncodable(request)
         case .checkNickname(let nickname):
-            return .requestParameters(parameters: ["nickname" : nickname], encoding: URLEncoding.queryString)
+            return .requestParameters(
+                parameters: ["nickname" : nickname],
+                encoding: URLEncoding.queryString
+            )
         case .getUserLogoUploadURL:
             return .requestPlain
         case .uploadUserProfileImage(let uri):
