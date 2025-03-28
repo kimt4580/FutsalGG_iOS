@@ -25,6 +25,30 @@ struct TeamMakeRequestDTO: Codable {
     }
 }
 
+extension TeamMakeRequestDTO {
+    static func initialize() -> TeamMakeRequestDTO {
+        return TeamMakeRequestDTO(
+            name: "",
+            introduction: "",
+            rule: "",
+            matchType: .all,
+            accessLevel: .member,
+            dues: 0
+        )
+    }
+    
+    func toDomain() -> TeamMakeRequest {
+        TeamMakeRequest(
+            name: name,
+            introduction: introduction,
+            rule: rule,
+            matchType: matchType.toDomain(),
+            accessLevel: accessLevel.toDomain(),
+            dues: dues
+        )
+    }
+}
+
 enum AccessLevelDTO: String, Codable {
     case owner = "OWNER"
     case leader = "TEAM_LEADER"
@@ -33,6 +57,40 @@ enum AccessLevelDTO: String, Codable {
     case member = "TEAM_MEMBER"
 }
 
+extension AccessLevelDTO {
+    static func initialize() -> AccessLevelDTO {
+        .member
+    }
+    
+    func toDomain() -> AccessLevel {
+        switch self {
+        case .owner:
+            return .owner
+        case .leader:
+            return .leader
+        case .deputyLeader:
+            return .deputyLeader
+        case .secretary:
+            return .secretary
+        case .member:
+            return .member
+        }
+    }
+}
+
 enum MatchTypeDTO: String, Codable {
     case all = "ALL"
+}
+
+extension MatchTypeDTO {
+    static func initialize() -> MatchTypeDTO {
+        .all
+    }
+    
+    func toDomain() -> MatchType {
+        switch self {
+        case .all:
+            return .all
+        }
+    }
 }
