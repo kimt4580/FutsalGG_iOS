@@ -11,6 +11,8 @@ import Moya
 enum UserEndpoint {
     case signUp(_ signUpRequest: SignUpRequestDTO)
     case checkNickname(_ nickname: String)
+    case getUserLogoUploadURL
+    case uploadUserProfileImage(_ uri: String)
 }
 
 extension UserEndpoint: APIEndpoint {
@@ -24,6 +26,10 @@ extension UserEndpoint: APIEndpoint {
             return "/users"
         case .checkNickname:
             return "/users/check-nickname"
+        case .getUserLogoUploadURL:
+            return "/users/profile-presigned-url"
+        case .uploadUserProfileImage:
+            return "/users/profile"
         }
     }
     
@@ -33,6 +39,10 @@ extension UserEndpoint: APIEndpoint {
             return .patch
         case .checkNickname:
             return .get
+        case .getUserLogoUploadURL:
+            return .get
+        case .uploadUserProfileImage:
+            return .patch
         }
     }
     
@@ -42,8 +52,10 @@ extension UserEndpoint: APIEndpoint {
             return .requestJSONEncodable(request)
         case .checkNickname(let nickname):
             return .requestParameters(parameters: ["nickname" : nickname], encoding: URLEncoding.queryString)
+        case .getUserLogoUploadURL:
+            return .requestPlain
+        case .uploadUserProfileImage(let uri):
+            return .requestJSONEncodable(uri)
         }
     }
-    
-    
 }
