@@ -10,11 +10,12 @@ import Moya
 
 enum TeamEndpoint {
     case makeTeam(_ teamMakeRequest: TeamMakeRequestDTO)
-    case checkNickname(_ nickname: String)
+    case checkTeamName(_ teamName: String)
     case getTeamLogoUploadURL
     case uploadTeamLogo(_ uri: String)
     case searchTeamName(_ teamName: String)
     case joinTeam(_ teamID: String)
+    case getMain
 }
 
 extension TeamEndpoint: APIEndpoint {
@@ -26,7 +27,7 @@ extension TeamEndpoint: APIEndpoint {
         switch self {
         case .makeTeam:
             return "/teams"
-        case .checkNickname:
+        case .checkTeamName:
             return "/teams/check-nickname"
         case .getTeamLogoUploadURL:
             return "/teams/logo-presigned-url"
@@ -36,6 +37,8 @@ extension TeamEndpoint: APIEndpoint {
             return "/teams"
         case .joinTeam:
             return "/team-members"
+        case .getMain:
+            return "/teams/me"
         }
     }
     
@@ -43,7 +46,7 @@ extension TeamEndpoint: APIEndpoint {
         switch self {
         case .makeTeam:
             return .post
-        case .checkNickname:
+        case .checkTeamName:
             return .get
         case .getTeamLogoUploadURL:
             return .get
@@ -53,6 +56,8 @@ extension TeamEndpoint: APIEndpoint {
             return .get
         case .joinTeam:
             return .post
+        case .getMain:
+            return .get
         }
     }
     
@@ -60,9 +65,9 @@ extension TeamEndpoint: APIEndpoint {
         switch self {
         case .makeTeam(let request):
             return .requestJSONEncodable(request)
-        case .checkNickname(let nickname):
+        case .checkTeamName(let teamName):
             return .requestParameters(
-                parameters: ["nickname" : nickname],
+                parameters: ["nickname" : teamName],
                 encoding: URLEncoding.queryString
             )
         case .getTeamLogoUploadURL:
@@ -79,6 +84,8 @@ extension TeamEndpoint: APIEndpoint {
                 parameters: ["team_id" : teamID],
                 encoding: URLEncoding.queryString
             )
+        case .getMain:
+            return .requestPlain
         }
     }
 }
