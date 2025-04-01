@@ -13,6 +13,10 @@ enum UserEndpoint {
     case checkNickname(_ nickname: String)
     case getUserLogoUploadURL
     case uploadUserProfileImage(_ uri: String)
+    case getMyInfo
+    case alertSetting(notification: Bool)
+    case changeMyInfo(name: String, squadNumber: Int?)
+    case signOut
 }
 
 extension UserEndpoint: APIEndpoint {
@@ -30,6 +34,14 @@ extension UserEndpoint: APIEndpoint {
             return "/users/profile-presigned-url"
         case .uploadUserProfileImage:
             return "/users/profile"
+        case .getMyInfo:
+            return "/users/me"
+        case .alertSetting:
+            return "/users/me/notification"
+        case .changeMyInfo:
+            return "/users/me"
+        case .signOut:
+            return "/users/me"
         }
     }
     
@@ -43,6 +55,14 @@ extension UserEndpoint: APIEndpoint {
             return .get
         case .uploadUserProfileImage:
             return .patch
+        case .getMyInfo:
+            return .get
+        case .alertSetting:
+            return .patch
+        case .changeMyInfo:
+            return .patch
+        case .signOut:
+            return .delete
         }
     }
     
@@ -59,6 +79,21 @@ extension UserEndpoint: APIEndpoint {
             return .requestPlain
         case .uploadUserProfileImage(let uri):
             return .requestJSONEncodable(uri)
+        case .getMyInfo:
+            return .requestPlain
+        case .alertSetting(let notification):
+            return .requestJSONEncodable(notification)
+        case .changeMyInfo(let name, let squadNumber):
+            var parameters: [String: Any] = ["name": name]
+            if let squadNumber {
+                parameters["squadNumber"] = squadNumber
+            }
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
+        case .signOut:
+            return .requestPlain
         }
     }
 }
