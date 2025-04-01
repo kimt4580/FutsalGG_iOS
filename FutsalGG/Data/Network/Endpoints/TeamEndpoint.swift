@@ -16,6 +16,7 @@ enum TeamEndpoint {
     case searchTeamName(_ teamName: String)
     case joinTeam(_ teamID: String)
     case getMain
+    case getTeamDelegates(_ name: String, _ role: String = "TEAM-MEMBER")
 }
 
 extension TeamEndpoint: APIEndpoint {
@@ -39,6 +40,8 @@ extension TeamEndpoint: APIEndpoint {
             return "/team-members"
         case .getMain:
             return "/teams/me"
+        case .getTeamDelegates:
+            return "/team-members/active"
         }
     }
     
@@ -58,6 +61,8 @@ extension TeamEndpoint: APIEndpoint {
             return .post
         case .getMain:
             return .get
+        case .getTeamDelegates:
+            return .get
         }
     }
     
@@ -67,7 +72,7 @@ extension TeamEndpoint: APIEndpoint {
             return .requestJSONEncodable(request)
         case .checkTeamName(let teamName):
             return .requestParameters(
-                parameters: ["nickname" : teamName],
+                parameters: ["nickname": teamName],
                 encoding: URLEncoding.queryString
             )
         case .getTeamLogoUploadURL:
@@ -76,16 +81,21 @@ extension TeamEndpoint: APIEndpoint {
             return .requestJSONEncodable(uri)
         case .searchTeamName(let teamName):
             return .requestParameters(
-                parameters: ["name" : teamName],
+                parameters: ["name": teamName],
                 encoding: URLEncoding.queryString
             )
         case .joinTeam(let teamID):
             return .requestParameters(
-                parameters: ["team_id" : teamID],
+                parameters: ["team_id": teamID],
                 encoding: URLEncoding.queryString
             )
         case .getMain:
             return .requestPlain
+        case .getTeamDelegates(let name, let role):
+            return .requestParameters(
+                parameters: ["name": name, "role": role],
+                encoding: URLEncoding.queryString
+            )
         }
     }
 }
