@@ -25,7 +25,9 @@ extension AuthEndpoint: APIEndpoint {
     
     var method: Moya.Method {
         switch self {
-        case .login, .refresh:
+        case .login:
+            return .post
+        case .refresh:
             return .post
         }
     }

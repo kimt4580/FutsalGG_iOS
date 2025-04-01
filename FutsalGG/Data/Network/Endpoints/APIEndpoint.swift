@@ -41,7 +41,11 @@ extension APIEndpoint {
     }
     
     // 기본값 제공
-    var customHeaders: [String: String]? { nil }
+    var customHeaders: [String: String]? {
+        nil
+    }
     
-    var sampleData: Data { Data() }
+    var sampleData: Data {
+        Data()
+    }
 }
