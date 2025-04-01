@@ -11,7 +11,7 @@ struct TeamMakeRequestDTO: Codable {
     let name: String
     let introduction: String
     let rule: String
-    let matchType: MatchTypeDTO
+    let matchType: TeamMatchPreferenceDTO
     let accessLevel: AccessLevelDTO
     let dues: Int
     
@@ -78,16 +78,16 @@ extension AccessLevelDTO {
     }
 }
 
-enum MatchTypeDTO: String, Codable {
+enum TeamMatchPreferenceDTO: String, Codable {
     case all = "ALL"
 }
 
-extension MatchTypeDTO {
-    static func initialize() -> MatchTypeDTO {
+extension TeamMatchPreferenceDTO {
+    static func initialize() -> TeamMatchPreferenceDTO {
         .all
     }
     
-    func toDomain() -> MatchType {
+    func toDomain() -> TeamMatchPreference {
         switch self {
         case .all:
             return .all

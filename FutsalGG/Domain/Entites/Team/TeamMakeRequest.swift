@@ -11,7 +11,7 @@ struct TeamMakeRequest {
     let name: String
     let introduction: String
     let rule: String
-    let matchType: MatchType
+    let matchType: TeamMatchPreference
     let accessLevel: AccessLevel
     let dues: Int
 }
@@ -24,6 +24,6 @@ enum AccessLevel: String {
     case member = "TEAM_MEMBER"
 }
 
-enum MatchType: String {
+enum TeamMatchPreference: String {
     case all = "ALL"
 }

@@ -11,4 +11,3 @@ struct ImageUploadURLResponse {
     let url: String
     let uri: String
 }
-

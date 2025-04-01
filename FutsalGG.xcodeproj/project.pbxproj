@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A04BCB82D9B79A80016A0C5 /* MatchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCB72D9B79A80016A0C5 /* MatchEndpoint.swift */; };
+		8A04BCBC2D9B7E5B0016A0C5 /* MatchResponseElementDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCBB2D9B7E5B0016A0C5 /* MatchResponseElementDTO.swift */; };
+		8A04BCC02D9B9AF60016A0C5 /* MatchResponseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCBF2D9B9AF60016A0C5 /* MatchResponseElement.swift */; };
+		8A04BCC42D9B9C050016A0C5 /* MatchMakeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCC32D9B9C050016A0C5 /* MatchMakeRequestDTO.swift */; };
+		8A04BCC62D9B9D7F0016A0C5 /* MatchMakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCC52D9B9D7F0016A0C5 /* MatchMakeRequest.swift */; };
+		8A04BCCC2D9B9FFA0016A0C5 /* MatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCCB2D9B9FFA0016A0C5 /* MatchResponse.swift */; };
+		8A04BCCE2D9BA0040016A0C5 /* MatchResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCCD2D9BA0040016A0C5 /* MatchResponseDTO.swift */; };
+		8A04BCD32D9BC3260016A0C5 /* MyInfoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCD22D9BC3260016A0C5 /* MyInfoResponseDTO.swift */; };
+		8A04BCD52D9BC3DF0016A0C5 /* MyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCD42D9BC3DF0016A0C5 /* MyInfoResponse.swift */; };
 		8A3E22CF2D8BA3A600EA1646 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22CE2D8BA3A600EA1646 /* ComposableArchitecture */; };
 		8A3E22D22D8BA3CD00EA1646 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D12D8BA3CD00EA1646 /* CombineMoya */; };
 		8A3E22D42D8BA3CD00EA1646 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D32D8BA3CD00EA1646 /* Moya */; };
@@ -64,6 +73,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A04BCB72D9B79A80016A0C5 /* MatchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEndpoint.swift; sourceTree = "<group>"; };
+		8A04BCBB2D9B7E5B0016A0C5 /* MatchResponseElementDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponseElementDTO.swift; sourceTree = "<group>"; };
+		8A04BCBF2D9B9AF60016A0C5 /* MatchResponseElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponseElement.swift; sourceTree = "<group>"; };
+		8A04BCC32D9B9C050016A0C5 /* MatchMakeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakeRequestDTO.swift; sourceTree = "<group>"; };
+		8A04BCC52D9B9D7F0016A0C5 /* MatchMakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakeRequest.swift; sourceTree = "<group>"; };
+		8A04BCCB2D9B9FFA0016A0C5 /* MatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponse.swift; sourceTree = "<group>"; };
+		8A04BCCD2D9BA0040016A0C5 /* MatchResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponseDTO.swift; sourceTree = "<group>"; };
+		8A04BCD22D9BC3260016A0C5 /* MyInfoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoResponseDTO.swift; sourceTree = "<group>"; };
+		8A04BCD42D9BC3DF0016A0C5 /* MyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoResponse.swift; sourceTree = "<group>"; };
 		8A3E22AA2D8B89DB00EA1646 /* FutsalGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutsalGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3E22F62D8BA56000EA1646 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		8A3E22F72D8BA56000EA1646 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -133,6 +151,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A04BCBA2D9B7E450016A0C5 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				8A04BCBB2D9B7E5B0016A0C5 /* MatchResponseElementDTO.swift */,
+				8A04BCC32D9B9C050016A0C5 /* MatchMakeRequestDTO.swift */,
+				8A04BCCD2D9BA0040016A0C5 /* MatchResponseDTO.swift */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		8A04BCBE2D9B9ABA0016A0C5 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				8A04BCBF2D9B9AF60016A0C5 /* MatchResponseElement.swift */,
+				8A04BCC52D9B9D7F0016A0C5 /* MatchMakeRequest.swift */,
+				8A04BCCB2D9B9FFA0016A0C5 /* MatchResponse.swift */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		8A04BCD02D9BC2E60016A0C5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				8A04BCD42D9BC3DF0016A0C5 /* MyInfoResponse.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		8A04BCD12D9BC2F00016A0C5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				8A04BCD22D9BC3260016A0C5 /* MyInfoResponseDTO.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		8A3E22A12D8B89DB00EA1646 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +358,7 @@
 				8A79A9982D92691B005D7BD5 /* AuthEndpoint.swift */,
 				8AEFAF4F2D93926D00003B36 /* UserEndpoint.swift */,
 				8AEFAF6B2D93F02700003B36 /* TeamEndpoint.swift */,
+				8A04BCB72D9B79A80016A0C5 /* MatchEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -351,6 +406,8 @@
 				8AEFAF5D2D93930400003B36 /* SignUp */,
 				8A7B73932D92401E00A65ED9 /* Login */,
 				8A79A9692D925A6D005D7BD5 /* Token */,
+				8A04BCBA2D9B7E450016A0C5 /* Match */,
+				8A04BCD12D9BC2F00016A0C5 /* Setting */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -363,6 +420,8 @@
 				8AEFAF552D9392E600003B36 /* SignUp */,
 				8A79A96C2D925A93005D7BD5 /* Login */,
 				8A79A9712D925B5D005D7BD5 /* Token */,
+				8A04BCBE2D9B9ABA0016A0C5 /* Match */,
+				8A04BCD02D9BC2E60016A0C5 /* Setting */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -526,6 +585,7 @@
 				8A821E172D964D9A00168D69 /* TeamMakeRequest.swift in Sources */,
 				8A79A99F2D9276B6005D7BD5 /* PreferenceManager.swift in Sources */,
 				8A79A99D2D927685005D7BD5 /* TokenManager.swift in Sources */,
+				8A04BCCE2D9BA0040016A0C5 /* MatchResponseDTO.swift in Sources */,
 				8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */,
 				8A821E212D96616D00168D69 /* TeamSearchResponseDTO.swift in Sources */,
 				8A79A9642D925A06005D7BD5 /* AppConstant.swift in Sources */,
@@ -534,20 +594,28 @@
 				8A821E1B2D96556A00168D69 /* ImageUploadURLResponse.swift in Sources */,
 				8A79A9972D926917005D7BD5 /* NetworkService.swift in Sources */,
 				8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */,
+				8A04BCD52D9BC3DF0016A0C5 /* MyInfoResponse.swift in Sources */,
 				8A3E23222D8CE59700EA1646 /* LoginPage.swift in Sources */,
 				8AEFAF6C2D93F02700003B36 /* TeamEndpoint.swift in Sources */,
 				8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */,
+				8A04BCCC2D9B9FFA0016A0C5 /* MatchResponse.swift in Sources */,
+				8A04BCC02D9B9AF60016A0C5 /* MatchResponseElement.swift in Sources */,
 				8A821E252D96839A00168D69 /* MainResponseDTO.swift in Sources */,
 				8A79A9602D924320005D7BD5 /* LoginResponse.swift in Sources */,
+				8A04BCC42D9B9C050016A0C5 /* MatchMakeRequestDTO.swift in Sources */,
+				8A04BCBC2D9B7E5B0016A0C5 /* MatchResponseElementDTO.swift in Sources */,
 				8A79A9622D924356005D7BD5 /* LoginResponseDTO.swift in Sources */,
 				8A821E232D9661C300168D69 /* TeamSearchResponse.swift in Sources */,
 				8A3E23262D8CE82500EA1646 /* View+Extension.swift in Sources */,
 				8A79A99B2D92691B005D7BD5 /* AuthEndpoint.swift in Sources */,
 				8AEFAF502D93926D00003B36 /* UserEndpoint.swift in Sources */,
+				8A04BCC62D9B9D7F0016A0C5 /* MatchMakeRequest.swift in Sources */,
 				8A3E23062D8BA56000EA1646 /* FutsalGGApp.swift in Sources */,
+				8A04BCB82D9B79A80016A0C5 /* MatchEndpoint.swift in Sources */,
 				8A3E23242D8CE81A00EA1646 /* Color+Extension.swift in Sources */,
 				8AEFAF562D9392E600003B36 /* SignUpRequest.swift in Sources */,
 				8A79A96A2D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift in Sources */,
+				8A04BCD32D9BC3260016A0C5 /* MyInfoResponseDTO.swift in Sources */,
 				8A79A9A62D927E61005D7BD5 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
