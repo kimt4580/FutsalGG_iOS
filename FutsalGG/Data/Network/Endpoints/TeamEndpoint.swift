@@ -17,6 +17,14 @@ enum TeamEndpoint {
     case joinTeam(_ teamID: String)
     case getMain
     case getTeamDelegates(_ name: String, _ role: String = "TEAM-MEMBER")
+    case getMyTeamMemberProfile
+    case getTeamMemberProfile(_ id: String)
+    case getMyTeam
+    case getTeamMember(_ teamID: String)
+    case getTeamRecord(_ teamID: String)
+    case acceptTeamJoinRequest(_ memberID: String)
+    case declineTeamJoinRequest(_ memberID: String)
+    case changeRole(_ memberID: String, _ role: AccessLevelDTO)
 }
 
 extension TeamEndpoint: APIEndpoint {
@@ -42,6 +50,20 @@ extension TeamEndpoint: APIEndpoint {
             return "/teams/me"
         case .getTeamDelegates:
             return "/team-members/active"
+        case .getMyTeamMemberProfile:
+            return "/team-members/me"
+        case .getTeamMemberProfile(let id):
+            return "/team-members/\(id)"
+        case .getMyTeam:
+            return "/teams/me"
+        case .getTeamMember:
+            return "/teams/me"
+        case .getTeamRecord(let teamID):
+            return "teams/\(teamID)/analysis"
+        case .acceptTeamJoinRequest(let memberID):
+            return "/team-members/\(memberID)/status/accpeted"
+        case .declineTeamJoinRequest(let memberID):
+            return "/team-members/\(memberID)/status/decliend"
         }
     }
     
@@ -63,6 +85,20 @@ extension TeamEndpoint: APIEndpoint {
             return .get
         case .getTeamDelegates:
             return .get
+        case .getMyTeamMemberProfile:
+            return .get
+        case .getTeamMemberProfile:
+            return .get
+        case .getMyTeam:
+            return .get
+        case .getTeamMember:
+            return .get
+        case .getTeamRecord:
+            return .get
+        case .acceptTeamJoinRequest:
+            return .patch
+        case .declineTeamJoinRequest:
+            return .patch
         }
     }
     
@@ -96,8 +132,23 @@ extension TeamEndpoint: APIEndpoint {
                 parameters: ["name": name, "role": role],
                 encoding: URLEncoding.queryString
             )
+        case .getMyTeamMemberProfile:
+            return .requestPlain
+        case .getTeamMemberProfile(let teamID):
+            return .requestParameters(
+                parameters: ["team-id": teamID],
+                encoding: URLEncoding.queryString
+            )
+        case .getTeamMember:
+            return .requestPlain
+        case .getMyTeam:
+            return .requestPlain
+        case .getTeamRecord:
+            return .requestPlain
+        case .acceptTeamJoinRequest:
+            return .requestPlain
+        case .declineTeamJoinRequest:
+            return .requestPlain
         }
     }
 }
-
-
