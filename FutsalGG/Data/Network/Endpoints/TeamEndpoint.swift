@@ -24,7 +24,8 @@ enum TeamEndpoint {
     case getTeamRecord(_ teamID: String)
     case acceptTeamJoinRequest(_ memberID: String)
     case declineTeamJoinRequest(_ memberID: String)
-    case changeRole(_ memberID: String, _ role: AccessLevelDTO)
+    case changeMemberRole(_ memberID: String, _ role: RoleDTO)
+    case changeMemberStatus(_ memberID: String, _ status: MemberStatusDTO)
 }
 
 extension TeamEndpoint: APIEndpoint {
@@ -64,6 +65,10 @@ extension TeamEndpoint: APIEndpoint {
             return "/team-members/\(memberID)/status/accpeted"
         case .declineTeamJoinRequest(let memberID):
             return "/team-members/\(memberID)/status/decliend"
+        case .changeMemberRole(let memberID, _):
+            return "/team-members/\(memberID)/role"
+        case .changeMemberStatus(let memberID, _):
+            return "/team-members/\(memberID)/status"
         }
     }
     
@@ -98,6 +103,10 @@ extension TeamEndpoint: APIEndpoint {
         case .acceptTeamJoinRequest:
             return .patch
         case .declineTeamJoinRequest:
+            return .patch
+        case .changeMemberRole:
+            return .patch
+        case .changeMemberStatus:
             return .patch
         }
     }
@@ -149,6 +158,10 @@ extension TeamEndpoint: APIEndpoint {
             return .requestPlain
         case .declineTeamJoinRequest:
             return .requestPlain
+        case .changeMemberRole(_, let role):
+            return .requestJSONEncodable(role)
+        case .changeMemberStatus(_, let status):
+            return .requestJSONEncodable(status)
         }
     }
 }
