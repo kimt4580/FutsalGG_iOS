@@ -13,8 +13,8 @@ struct MatchResponseElementDTO: Codable {
     let description: String?
     let type: MatchTypeDTO
     let matchDate: String // "yyyy-MM-dd" 형식
-    let startDate: Date?
-    let endDate: Date?
+    let startTime: String? // "HH:mm" 형식
+    let endTime: String? // "HH:mm" 형식
     let location: String
     let voteStatus: MatchVoteStatusDTO
     let status: MatchProgressDTO
@@ -29,8 +29,8 @@ extension MatchResponseElementDTO {
             description: nil,
             type: .squad,
             matchDate: "",
-            startDate: nil,
-            endDate: nil,
+            startTime: nil,
+            endTime: nil,
             location: "",
             voteStatus: .none,
             status: .draft,
@@ -45,8 +45,8 @@ extension MatchResponseElementDTO {
             description: description,
             type: type.toDomain(),
             matchDate: matchDate,
-            startDate: startDate,
-            endDate: endDate,
+            startTime: startTime,
+            endTime: endTime,
             location: location,
             voteStatus: voteStatus.toDomain(),
             status: status.toDomain(),

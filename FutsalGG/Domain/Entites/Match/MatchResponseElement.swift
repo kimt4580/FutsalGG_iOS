@@ -13,8 +13,8 @@ struct MatchResponseElement {
     let description: String?
     let type: MatchType
     let matchDate: String // "yyyy-MM-dd" 형식
-    let startDate: Date?
-    let endDate: Date?
+    let startTime: String? // "HH:mm" 형식
+    let endTime: String? // "HH:mm" 형식
     let location: String
     let voteStatus: MatchVoteStatus
     let status: MatchProgress
