@@ -12,6 +12,8 @@ enum MatchEndpoint {
     case checkMatches(page: Int, size: Int)
     case deleteMatch(id: Int)
     case makeMatch(request: MatchMakeRequestDTO)
+    case attendMatchMember(_ matchID: String, _ teamMemberIDs: [String])
+    case deleteMatchMember(_ matchID: String, _ teamMemberIDs: [String])
 }
 
 extension MatchEndpoint: APIEndpoint {
@@ -27,6 +29,10 @@ extension MatchEndpoint: APIEndpoint {
             return "/matches/\(id)"
         case .makeMatch:
             return "matches"
+        case .attendMatchMember:
+            return "/match-participants"
+        case .deleteMatchMember:
+            return "/match-participants"
         }
     }
     
@@ -38,6 +44,10 @@ extension MatchEndpoint: APIEndpoint {
             return .delete
         case .makeMatch:
             return .post
+        case .attendMatchMember:
+            return .post
+        case .deleteMatchMember:
+            return .delete
         }
     }
     
@@ -52,6 +62,18 @@ extension MatchEndpoint: APIEndpoint {
             return .requestPlain
         case .makeMatch(let request):
             return .requestJSONEncodable(request)
+        case .attendMatchMember(let matchID, let teamMemberIDs):
+            var parameters: [String: Any] = ["matchId": matchID, "teamMemberIds": teamMemberIDs]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
+        case .deleteMatchMember(let matchID, let teamMemberIDs):
+            var parameters: [String: Any] = ["matchId": matchID, "teamMemberIds": teamMemberIDs]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
         }
     }
 }

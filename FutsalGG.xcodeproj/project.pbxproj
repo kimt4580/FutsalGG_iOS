@@ -65,6 +65,10 @@
 		8AC71AEA2DA359500088E898 /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71AE92DA359500088E898 /* TeamMember.swift */; };
 		8AC71AEC2DA393310088E898 /* TeamMatchRecordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71AEB2DA393310088E898 /* TeamMatchRecordDTO.swift */; };
 		8AC71AEE2DA394D70088E898 /* TeamMatchRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71AED2DA394D70088E898 /* TeamMatchRecord.swift */; };
+		8AC71AF02DA3A9DA0088E898 /* RoleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71AEF2DA3A9DA0088E898 /* RoleDTO.swift */; };
+		8AC71AF22DA3AB4A0088E898 /* MemberStatusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71AF12DA3AB4A0088E898 /* MemberStatusDTO.swift */; };
+		8AC71AF42DA3B8CD0088E898 /* MatchMemberResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71AF32DA3B8CD0088E898 /* MatchMemberResponseDTO.swift */; };
+		8AC71AF62DA3B9740088E898 /* MatchMemberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71AF52DA3B9740088E898 /* MatchMemberResponse.swift */; };
 		8ACC68E02D915677001D49C0 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */; };
 		8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC68E42D915822001D49C0 /* LoginRequest.swift */; };
 		8AEFAF4E2D938DDB00003B36 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFAF4D2D938DDB00003B36 /* RootView.swift */; };
@@ -128,6 +132,10 @@
 		8AC71AE92DA359500088E898 /* TeamMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
 		8AC71AEB2DA393310088E898 /* TeamMatchRecordDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchRecordDTO.swift; sourceTree = "<group>"; };
 		8AC71AED2DA394D70088E898 /* TeamMatchRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchRecord.swift; sourceTree = "<group>"; };
+		8AC71AEF2DA3A9DA0088E898 /* RoleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDTO.swift; sourceTree = "<group>"; };
+		8AC71AF12DA3AB4A0088E898 /* MemberStatusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberStatusDTO.swift; sourceTree = "<group>"; };
+		8AC71AF32DA3B8CD0088E898 /* MatchMemberResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMemberResponseDTO.swift; sourceTree = "<group>"; };
+		8AC71AF52DA3B9740088E898 /* MatchMemberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMemberResponse.swift; sourceTree = "<group>"; };
 		8ACC68DF2D915677001D49C0 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		8ACC68E42D915822001D49C0 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		8AEFAF4D2D938DDB00003B36 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 				8A04BCBB2D9B7E5B0016A0C5 /* MatchResponseElementDTO.swift */,
 				8A04BCC32D9B9C050016A0C5 /* MatchMakeRequestDTO.swift */,
 				8A04BCCD2D9BA0040016A0C5 /* MatchResponseDTO.swift */,
+				8AC71AF32DA3B8CD0088E898 /* MatchMemberResponseDTO.swift */,
 			);
 			path = Match;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 				8A04BCBF2D9B9AF60016A0C5 /* MatchResponseElement.swift */,
 				8A04BCC52D9B9D7F0016A0C5 /* MatchMakeRequest.swift */,
 				8A04BCCB2D9B9FFA0016A0C5 /* MatchResponse.swift */,
+				8AC71AF52DA3B9740088E898 /* MatchMemberResponse.swift */,
 			);
 			path = Match;
 			sourceTree = "<group>";
@@ -474,6 +484,8 @@
 				8A821E202D96616D00168D69 /* TeamSearchResponseDTO.swift */,
 				8AC71AE72DA3591C0088E898 /* TeamMemberDTO.swift */,
 				8AC71AEB2DA393310088E898 /* TeamMatchRecordDTO.swift */,
+				8AC71AEF2DA3A9DA0088E898 /* RoleDTO.swift */,
+				8AC71AF12DA3AB4A0088E898 /* MemberStatusDTO.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -593,6 +605,7 @@
 				8AC71AEA2DA359500088E898 /* TeamMember.swift in Sources */,
 				8A821E272D96845800168D69 /* MainResponse.swift in Sources */,
 				8A79A9722D925B5D005D7BD5 /* TokenRefreshResponse.swift in Sources */,
+				8AC71AF22DA3AB4A0088E898 /* MemberStatusDTO.swift in Sources */,
 				8A79A9A42D927E33005D7BD5 /* APIEndpoint.swift in Sources */,
 				8AEFAF5E2D93930400003B36 /* SignUpRequestDTO.swift in Sources */,
 				8A821E172D964D9A00168D69 /* TeamMakeRequest.swift in Sources */,
@@ -600,6 +613,7 @@
 				8A79A99D2D927685005D7BD5 /* TokenManager.swift in Sources */,
 				8A04BCCE2D9BA0040016A0C5 /* MatchResponseDTO.swift in Sources */,
 				8AC71AEE2DA394D70088E898 /* TeamMatchRecord.swift in Sources */,
+				8AC71AF62DA3B9740088E898 /* MatchMemberResponse.swift in Sources */,
 				8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */,
 				8A821E212D96616D00168D69 /* TeamSearchResponseDTO.swift in Sources */,
 				8A79A9642D925A06005D7BD5 /* AppConstant.swift in Sources */,
@@ -619,6 +633,7 @@
 				8A79A9602D924320005D7BD5 /* LoginResponse.swift in Sources */,
 				8A04BCC42D9B9C050016A0C5 /* MatchMakeRequestDTO.swift in Sources */,
 				8A04BCBC2D9B7E5B0016A0C5 /* MatchResponseElementDTO.swift in Sources */,
+				8AC71AF42DA3B8CD0088E898 /* MatchMemberResponseDTO.swift in Sources */,
 				8A79A9622D924356005D7BD5 /* LoginResponseDTO.swift in Sources */,
 				8AC71AEC2DA393310088E898 /* TeamMatchRecordDTO.swift in Sources */,
 				8A821E232D9661C300168D69 /* TeamSearchResponse.swift in Sources */,
@@ -631,6 +646,7 @@
 				8A3E23242D8CE81A00EA1646 /* Color+Extension.swift in Sources */,
 				8AEFAF562D9392E600003B36 /* SignUpRequest.swift in Sources */,
 				8A79A96A2D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift in Sources */,
+				8AC71AF02DA3A9DA0088E898 /* RoleDTO.swift in Sources */,
 				8A04BCD32D9BC3260016A0C5 /* MyInfoResponseDTO.swift in Sources */,
 				8A79A9A62D927E61005D7BD5 /* NetworkError.swift in Sources */,
 			);
