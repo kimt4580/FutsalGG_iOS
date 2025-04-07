@@ -11,6 +11,7 @@ import Moya
 enum MatchEndpoint {
     case checkMatches(page: Int, size: Int)
     case deleteMatch(id: Int)
+    case makeMatch(request: MatchMakeRequestDTO)
 }
 
 extension MatchEndpoint: APIEndpoint {
@@ -24,6 +25,8 @@ extension MatchEndpoint: APIEndpoint {
             return "/matches"
         case .deleteMatch(let id):
             return "/matches/\(id)"
+        case .makeMatch:
+            return "matches"
         }
     }
     
@@ -33,6 +36,8 @@ extension MatchEndpoint: APIEndpoint {
             return .get
         case .deleteMatch:
             return .delete
+        case .makeMatch:
+            return .post
         }
     }
     
@@ -45,8 +50,8 @@ extension MatchEndpoint: APIEndpoint {
             )
         case .deleteMatch:
             return .requestPlain
+        case .makeMatch(let request):
+            return .requestJSONEncodable(request)
         }
     }
 }
-
-
