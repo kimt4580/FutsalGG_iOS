@@ -116,8 +116,11 @@ extension TeamEndpoint: APIEndpoint {
         case .makeTeam(let request):
             return .requestJSONEncodable(request)
         case .checkTeamName(let teamName):
+            let parameters: [String: Any] = [
+                "nickname": teamName
+            ]
             return .requestParameters(
-                parameters: ["nickname": teamName],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         case .getTeamLogoUploadURL:
@@ -125,27 +128,41 @@ extension TeamEndpoint: APIEndpoint {
         case .uploadTeamLogo(let uri):
             return .requestJSONEncodable(uri)
         case .searchTeamName(let teamName):
+            let parameters: [String: Any] = [
+                "name": teamName
+            ]
             return .requestParameters(
-                parameters: ["name": teamName],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         case .joinTeam(let teamID):
+            let parameters: [String: Any] = [
+                "team-id": teamID
+            ]
             return .requestParameters(
-                parameters: ["team_id": teamID],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         case .getMain:
             return .requestPlain
         case .getTeamDelegates(let name, let role):
+            let parameters: [String: Any] = [
+                "name": name,
+                "role": role
+            ]
             return .requestParameters(
-                parameters: ["name": name, "role": role],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         case .getMyTeamMemberProfile:
             return .requestPlain
         case .getTeamMemberProfile(let teamID):
+            let parameters: [String: Any] = [
+                "team-id": teamID
+            ]
+            
             return .requestParameters(
-                parameters: ["team-id": teamID],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         case .getTeamMember:

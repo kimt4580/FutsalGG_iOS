@@ -12,8 +12,23 @@ enum MatchEndpoint {
     case checkMatches(page: Int, size: Int)
     case deleteMatch(id: Int)
     case makeMatch(request: MatchMakeRequestDTO)
-    case attendMatchMember(_ matchID: String, _ teamMemberIDs: [String])
-    case deleteMatchMember(_ matchID: String, _ teamMemberIDs: [String])
+    case attendMatchMember(matchID: String, _ teamMemberIDs: [String])
+    case deleteMatchMember(matchID: String, _ teamMemberIDs: [String])
+    case registerMatch(matchID: String, matchMemberIDs: [String], _ subTeam: SubTeamDTO)
+    case setMatchRound(matchID: String, _ roundCount: Int)
+    case getMatch(matchID: String)
+    case getMatchMembers(matchID: String)
+    case getMatchStatistics(matchID: String)
+    case recordMatchScore(_ request: MatchScoreRequestDTO)
+    case deleteMatchScore(matchStatID: String)
+    case uploadMatchMemoURL(matchID: String)
+    case uploadMatchMemoImageWithFile(url: String, fileName: String, file: Data)
+    case recordMatchMemo(_ request: MatchMemoRequestDTO)
+    case getMatchMemo(matchID: String)
+    case getMOMMember(matchID: String)
+    case getMonthVote(date: String) // "yyyy-MM" 형식
+    case endVote(matchID: String)
+    case changeMatchStatus(matchID: String)
 }
 
 extension MatchEndpoint: APIEndpoint {
@@ -33,6 +48,36 @@ extension MatchEndpoint: APIEndpoint {
             return "/match-participants"
         case .deleteMatchMember:
             return "/match-participants"
+        case .registerMatch:
+            return "/match-participants/bulk/sub-team"
+        case .setMatchRound(let matchID, _):
+            return "/match/\(matchID)/rounds"
+        case .getMatch(let matchID):
+            return "/match/\(matchID)"
+        case .getMatchMembers:
+            return "/match-participants"
+        case .getMatchStatistics:
+            return "/match-stats"
+        case .recordMatchScore:
+            return "/match-stats"
+        case .deleteMatchScore(let matchStatID):
+            return "/match-stats/\(matchStatID)"
+        case .uploadMatchMemoURL:
+            return "/match-notes/presigned-url"
+        case .uploadMatchMemoImageWithFile(let url, _, _):
+            return url
+        case .recordMatchMemo:
+            return "/match-notes"
+        case .getMatchMemo:
+            return "/match-notes/one"
+        case .getMOMMember:
+            return "/match-participants/mom"
+        case .getMonthVote:
+            return "/matches/vote"
+        case .endVote(let matchID):
+            return "/matches/\(matchID)/vote-status/ended"
+        case .changeMatchStatus(let matchID):
+            return "/matches/\(matchID)/status/ongoing"
         }
     }
     
@@ -48,14 +93,48 @@ extension MatchEndpoint: APIEndpoint {
             return .post
         case .deleteMatchMember:
             return .delete
+        case .registerMatch:
+            return .patch
+        case .setMatchRound:
+            return .patch
+        case .getMatch:
+            return .get
+        case .getMatchMembers:
+            return .get
+        case .getMatchStatistics:
+            return .get
+        case .recordMatchScore:
+            return .post
+        case .deleteMatchScore:
+            return .delete
+        case .uploadMatchMemoURL:
+            return .put
+        case .uploadMatchMemoImageWithFile:
+            return .put
+        case .recordMatchMemo:
+            return .put
+        case .getMatchMemo:
+            return .get
+        case .getMOMMember:
+            return .get
+        case .getMonthVote:
+            return .get
+        case .endVote:
+            return .patch
+        case .changeMatchStatus:
+            return .patch
         }
     }
     
     var task: Moya.Task {
         switch self {
         case .checkMatches(let page, let size):
+            let parameters: [String: Any] = [
+                "page": page,
+                "size": size
+            ]
             return .requestParameters(
-                parameters: ["page": page, "size": size],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         case .deleteMatch:
@@ -63,17 +142,113 @@ extension MatchEndpoint: APIEndpoint {
         case .makeMatch(let request):
             return .requestJSONEncodable(request)
         case .attendMatchMember(let matchID, let teamMemberIDs):
-            var parameters: [String: Any] = ["matchId": matchID, "teamMemberIds": teamMemberIDs]
+            let parameters: [String: Any] = [
+                "matchId": matchID,
+                "teamMemberIds": teamMemberIDs
+            ]
             return .requestParameters(
                 parameters: parameters,
                 encoding: JSONEncoding.default
             )
         case .deleteMatchMember(let matchID, let teamMemberIDs):
-            var parameters: [String: Any] = ["matchId": matchID, "teamMemberIds": teamMemberIDs]
+            let parameters: [String: Any] = [
+                "matchId": matchID,
+                "teamMemberIds": teamMemberIDs
+            ]
             return .requestParameters(
                 parameters: parameters,
                 encoding: JSONEncoding.default
             )
+        case .registerMatch(let matchID, let matchMemberIDs, let subTeam):
+            let parameters: [String: Any] = [
+                "matchId": matchID,
+                "ids": matchMemberIDs,
+                "subTeam": subTeam
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
+        case .setMatchRound(_, let roundCount):
+            let parameters: [String: Any] = [
+                "roundCount": roundCount
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
+        case .getMatch:
+            return .requestPlain
+        case .getMatchMembers(let matchID):
+            let parameters: [String: Any] = [
+                "matchId": matchID
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.queryString
+            )
+        case .getMatchStatistics(let matchID):
+            let parameters: [String: Any] = [
+                "matchId": matchID
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.queryString
+            )
+        case .recordMatchScore(let request):
+            return .requestJSONEncodable(request)
+        case .deleteMatchScore:
+            return .requestPlain
+        case .uploadMatchMemoURL(let matchID):
+            let parameters: [String: Any] = [
+                "matchId": matchID
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.queryString
+            )
+        case .uploadMatchMemoImageWithFile(_, let fileName, let file):
+            var multipartFormData: [MultipartFormData] = []
+            multipartFormData.append(
+                Moya.MultipartFormData(
+                    provider: .data(file),
+                    name: "file",
+                    fileName: fileName,
+                    mimeType: fileName.mimeType())
+            )
+            return .uploadMultipart(multipartFormData)
+        case .recordMatchMemo(let request):
+            return .requestJSONEncodable(request)
+        case .getMatchMemo(let matchID):
+            let parameters: [String: Any] = [
+                "matchId": matchID
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
+        case .getMOMMember(let matchID):
+            let parameters: [String: Any] = [
+                "matchId": matchID
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.queryString
+            )
+            
+        case .getMonthVote(let date):
+            let parameters: [String: Any] = [
+                "date": date
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.queryString
+            )
+            
+        case .endVote:
+            return .requestPlain
+        case .changeMatchStatus:
+            return .requestPlain
         }
     }
 }

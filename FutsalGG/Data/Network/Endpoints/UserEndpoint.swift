@@ -13,6 +13,7 @@ enum UserEndpoint {
     case checkNickname(_ nickname: String)
     case getUserLogoUploadURL
     case uploadUserProfileImage(_ uri: String)
+    case uploadUserProfileImageWithFile(url: String, fileName: String, file: Data)
     case getMyInfo
     case alertSetting(notification: Bool)
     case changeMyInfo(name: String, squadNumber: Int?)
@@ -42,6 +43,8 @@ extension UserEndpoint: APIEndpoint {
             return "/users/me"
         case .signOut:
             return "/users/me"
+        case .uploadUserProfileImageWithFile(let url, _, _):
+            return url
         }
     }
     
@@ -63,6 +66,8 @@ extension UserEndpoint: APIEndpoint {
             return .patch
         case .signOut:
             return .delete
+        case .uploadUserProfileImageWithFile:
+            return .put
         }
     }
     
@@ -71,8 +76,11 @@ extension UserEndpoint: APIEndpoint {
         case .signUp(let request):
             return .requestJSONEncodable(request)
         case .checkNickname(let nickname):
+            let parameters: [String: Any] = [
+                "nickname" : nickname
+            ]
             return .requestParameters(
-                parameters: ["nickname" : nickname],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         case .getUserLogoUploadURL:
@@ -84,7 +92,9 @@ extension UserEndpoint: APIEndpoint {
         case .alertSetting(let notification):
             return .requestJSONEncodable(notification)
         case .changeMyInfo(let name, let squadNumber):
-            var parameters: [String: Any] = ["name": name]
+            var parameters: [String: Any] = [
+                "name": name
+            ]
             if let squadNumber {
                 parameters["squadNumber"] = squadNumber
             }
@@ -94,6 +104,16 @@ extension UserEndpoint: APIEndpoint {
             )
         case .signOut:
             return .requestPlain
+        case .uploadUserProfileImageWithFile(_, let fileName, let file):
+            var multipartFormData: [MultipartFormData] = []
+            multipartFormData.append(
+                Moya.MultipartFormData(
+                    provider: .data(file),
+                    name: "file",
+                    fileName: fileName,
+                    mimeType: fileName.mimeType())
+            )
+            return .uploadMultipart(multipartFormData)
         }
     }
 }
