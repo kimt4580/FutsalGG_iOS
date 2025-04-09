@@ -11,21 +11,22 @@ import Moya
 enum TeamEndpoint {
     case makeTeam(_ teamMakeRequest: TeamMakeRequestDTO)
     case checkTeamName(_ teamName: String)
-    case getTeamLogoUploadURL
-    case uploadTeamLogo(_ uri: String)
-    case searchTeamName(_ teamName: String)
-    case joinTeam(_ teamID: String)
+    case getTeamLogoUploadURL(teamID: String)
+    case uploadTeamLogoImageWithFile(url: String, file: Data)
+    case uploadTeamLogo(teamID: String, uri: String)
+    case searchTeamName(teamName: String)
+    case joinTeam(teamID: String)
     case getMain
     case getTeamDelegates(_ name: String, _ role: String = "TEAM-MEMBER")
     case getMyTeamMemberProfile
     case getTeamMemberProfile(_ id: String)
     case getMyTeam
-    case getTeamMember(_ teamID: String)
-    case getTeamRecord(_ teamID: String)
-    case acceptTeamJoinRequest(_ memberID: String)
-    case declineTeamJoinRequest(_ memberID: String)
-    case changeMemberRole(_ memberID: String, _ role: RoleDTO)
-    case changeMemberStatus(_ memberID: String, _ status: MemberStatusDTO)
+    case getTeamMember(teamID: String)
+    case getTeamRecord(teamID: String)
+    case acceptTeamJoinRequest(memberID: String)
+    case declineTeamJoinRequest(memberID: String)
+    case changeMemberRole(memberID: String, _ role: RoleDTO)
+    case changeMemberStatus(memberID: String, _ status: MemberStatusDTO)
 }
 
 extension TeamEndpoint: APIEndpoint {
@@ -39,10 +40,12 @@ extension TeamEndpoint: APIEndpoint {
             return "/teams"
         case .checkTeamName:
             return "/teams/check-nickname"
-        case .getTeamLogoUploadURL:
-            return "/teams/logo-presigned-url"
-        case .uploadTeamLogo:
-            return "/teams/logo"
+        case .getTeamLogoUploadURL(let teamID):
+            return "/teams/\(teamID)/logo-presigned-url"
+        case .uploadTeamLogoImageWithFile(let url, _):
+            return url
+        case .uploadTeamLogo(let teamID, _):
+            return "/teams/\(teamID)/logo"
         case .searchTeamName:
             return "/teams"
         case .joinTeam:
@@ -80,6 +83,8 @@ extension TeamEndpoint: APIEndpoint {
             return .get
         case .getTeamLogoUploadURL:
             return .get
+        case .uploadTeamLogoImageWithFile:
+            return .put
         case .uploadTeamLogo:
             return .patch
         case .searchTeamName:
@@ -125,8 +130,16 @@ extension TeamEndpoint: APIEndpoint {
             )
         case .getTeamLogoUploadURL:
             return .requestPlain
-        case .uploadTeamLogo(let uri):
-            return .requestJSONEncodable(uri)
+        case .uploadTeamLogoImageWithFile(_, let file):
+            return .requestData(file)
+        case .uploadTeamLogo(_, let uri):
+            let parameters: [String: Any] = [
+                "uri": uri
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
         case .searchTeamName(let teamName):
             let parameters: [String: Any] = [
                 "name": teamName

@@ -11,9 +11,9 @@ import Moya
 enum UserEndpoint {
     case signUp(_ signUpRequest: SignUpRequestDTO)
     case checkNickname(_ nickname: String)
-    case getUserLogoUploadURL
-    case uploadUserProfileImage(_ uri: String)
-    case uploadUserProfileImageWithFile(url: String, fileName: String, file: Data)
+    case getUserProfileImageUploadURL
+    case uploadUserProfileImage(uri: String)
+    case uploadUserProfileImageWithFile(url: String, file: Data)
     case getMyInfo
     case alertSetting(notification: Bool)
     case changeMyInfo(name: String, squadNumber: Int?)
@@ -31,8 +31,10 @@ extension UserEndpoint: APIEndpoint {
             return "/users"
         case .checkNickname:
             return "/users/check-nickname"
-        case .getUserLogoUploadURL:
+        case .getUserProfileImageUploadURL:
             return "/users/profile-presigned-url"
+        case .uploadUserProfileImageWithFile(let url, _):
+            return url
         case .uploadUserProfileImage:
             return "/users/profile"
         case .getMyInfo:
@@ -43,8 +45,6 @@ extension UserEndpoint: APIEndpoint {
             return "/users/me"
         case .signOut:
             return "/users/me"
-        case .uploadUserProfileImageWithFile(let url, _, _):
-            return url
         }
     }
     
@@ -54,7 +54,7 @@ extension UserEndpoint: APIEndpoint {
             return .patch
         case .checkNickname:
             return .get
-        case .getUserLogoUploadURL:
+        case .getUserProfileImageUploadURL:
             return .get
         case .uploadUserProfileImage:
             return .patch
@@ -83,10 +83,18 @@ extension UserEndpoint: APIEndpoint {
                 parameters: parameters,
                 encoding: URLEncoding.queryString
             )
-        case .getUserLogoUploadURL:
+        case .getUserProfileImageUploadURL:
             return .requestPlain
+        case .uploadUserProfileImageWithFile(_, let file):
+            return .requestData(file)
         case .uploadUserProfileImage(let uri):
-            return .requestJSONEncodable(uri)
+            let parameters: [String: Any] = [
+                "uri": uri
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
         case .getMyInfo:
             return .requestPlain
         case .alertSetting(let notification):
@@ -104,16 +112,6 @@ extension UserEndpoint: APIEndpoint {
             )
         case .signOut:
             return .requestPlain
-        case .uploadUserProfileImageWithFile(_, let fileName, let file):
-            var multipartFormData: [MultipartFormData] = []
-            multipartFormData.append(
-                Moya.MultipartFormData(
-                    provider: .data(file),
-                    name: "file",
-                    fileName: fileName,
-                    mimeType: fileName.mimeType())
-            )
-            return .uploadMultipart(multipartFormData)
         }
     }
 }

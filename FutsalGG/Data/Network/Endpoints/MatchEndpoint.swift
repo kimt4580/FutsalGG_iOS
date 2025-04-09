@@ -22,8 +22,8 @@ enum MatchEndpoint {
     case recordMatchScore(_ request: MatchScoreRequestDTO)
     case deleteMatchScore(matchStatID: String)
     case uploadMatchMemoURL(matchID: String)
-    case uploadMatchMemoImageWithFile(url: String, fileName: String, file: Data)
-    case recordMatchMemo(_ request: MatchMemoRequestDTO)
+    case uploadMatchMemoImageWithFile(url: String, file: Data)
+    case uploadMatchMemo(_ request: MatchMemoRequestDTO)
     case getMatchMemo(matchID: String)
     case getMOMMember(matchID: String)
     case getMonthVote(date: String) // "yyyy-MM" 형식
@@ -64,9 +64,9 @@ extension MatchEndpoint: APIEndpoint {
             return "/match-stats/\(matchStatID)"
         case .uploadMatchMemoURL:
             return "/match-notes/presigned-url"
-        case .uploadMatchMemoImageWithFile(let url, _, _):
+        case .uploadMatchMemoImageWithFile(let url, _):
             return url
-        case .recordMatchMemo:
+        case .uploadMatchMemo:
             return "/match-notes"
         case .getMatchMemo:
             return "/match-notes/one"
@@ -108,10 +108,10 @@ extension MatchEndpoint: APIEndpoint {
         case .deleteMatchScore:
             return .delete
         case .uploadMatchMemoURL:
-            return .put
+            return .get
         case .uploadMatchMemoImageWithFile:
             return .put
-        case .recordMatchMemo:
+        case .uploadMatchMemo:
             return .put
         case .getMatchMemo:
             return .get
@@ -207,17 +207,9 @@ extension MatchEndpoint: APIEndpoint {
                 parameters: parameters,
                 encoding: URLEncoding.queryString
             )
-        case .uploadMatchMemoImageWithFile(_, let fileName, let file):
-            var multipartFormData: [MultipartFormData] = []
-            multipartFormData.append(
-                Moya.MultipartFormData(
-                    provider: .data(file),
-                    name: "file",
-                    fileName: fileName,
-                    mimeType: fileName.mimeType())
-            )
-            return .uploadMultipart(multipartFormData)
-        case .recordMatchMemo(let request):
+        case .uploadMatchMemoImageWithFile(_, let file):
+            return .requestData(file)
+        case .uploadMatchMemo(let request):
             return .requestJSONEncodable(request)
         case .getMatchMemo(let matchID):
             let parameters: [String: Any] = [
@@ -235,7 +227,6 @@ extension MatchEndpoint: APIEndpoint {
                 parameters: parameters,
                 encoding: URLEncoding.queryString
             )
-            
         case .getMonthVote(let date):
             let parameters: [String: Any] = [
                 "date": date
@@ -244,7 +235,6 @@ extension MatchEndpoint: APIEndpoint {
                 parameters: parameters,
                 encoding: URLEncoding.queryString
             )
-            
         case .endVote:
             return .requestPlain
         case .changeMatchStatus:
