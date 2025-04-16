@@ -10,44 +10,48 @@ import SwiftUI
 struct LoginPage: View {
     var body: some View {
         VStack {
-            Spacer()
-        VStack {
-            RoundedRectangle(cornerRadius: 16)
-                .foregroundStyle(Color.init("#D9D9D9"))
-                .frame(width: 120, height: 120)
-                .padding(.top, 80)
-            
             VStack {
-                Button {
-                    
-                } label: {
-                    HStack {
-                        Image(systemName: "apple.logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                            .foregroundStyle(.white)
-                            .padding(.leading, 30)
-                        
-                        Spacer()
-                        
-                        Text("Apple로 시작하기")
-                            .foregroundStyle(.white)
-                            .bold()
-                            .padding(.trailing, 40)
-                        
-                        Spacer()
+                Image("main_logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .padding(.top, 128)
+                
+                Spacer()
+                
+                VStack {
+                    NavigationLink {
+                        TermView()
+                    } label: {
+                        HStack {
+                            Image(systemName: "apple.logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                                .foregroundStyle(.white)
+                                .padding(.leading, 24)
+                            
+                            Spacer()
+                            
+                            Text("Apple로 시작하기")
+                                .foregroundStyle(.white)
+                                .pretendardStyle(.R_20_300)
+                                .padding(.trailing, 40)
+                            
+                            Spacer()
+                        }
+                        .frame(width: 358, height: 48)
                     }
+                    .background(
+                        RoundedRectangle(cornerRadius: 16)
+                            .foregroundStyle(.mono900)
+                    )
+                    .whiteShadowSoft(radius: 16)
+                    .padding(.bottom, 160)
                 }
-                .frame(width: 328, height: 48)
-                .background(
-                    RoundedRectangle(cornerRadius: 16)
-                )
-                .padding(.top, 476)
             }
-        }
             Spacer()
-    }
+        }
         .background(
             Image("login_background")
                 .resizable()
