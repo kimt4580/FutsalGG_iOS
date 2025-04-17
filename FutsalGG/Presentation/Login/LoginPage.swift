@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct LoginPage: View {
     var body: some View {
@@ -21,7 +22,9 @@ struct LoginPage: View {
                 
                 VStack {
                     NavigationLink {
-                        TermView()
+                        TermView(store: Store(initialState: TermFeature.State()) {
+                            TermFeature()
+                        })
                     } label: {
                         HStack {
                             Image(systemName: "apple.logo")
