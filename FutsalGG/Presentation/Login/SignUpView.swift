@@ -486,48 +486,48 @@ struct SignUpView: View {
                                 }
                                 .padding(.top, 56)
                                 
-                                VStack {
-                                    HStack(alignment: .lastTextBaseline, spacing: 0) {
-                                        Text("푸시 알림")
-                                            .pretendardStyle(.B_20_300)
-                                            .foregroundStyle(.mono900)
-                                        Text("(경기 일정, 투표 등록)")
-                                            .pretendardStyle(.R_17_200)
-                                            .foregroundStyle(.mono500)
-                                            .padding(.leading, 5)
-                                        Spacer()
-                                    }
-                                    
-                                    HStack {
-                                        Button {
-                                            isAllowNotification.toggle()
-                                        } label: {
-                                            HStack {
-                                                HStack {
-                                                    Image(isAllowNotification ? "checkbox_on_icon" : "checkbox_off_icon")
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(width: 24, height: 24)
-                                                }
-                                                .frame(width: 56, height: 56)
-                                                
-                                                HStack {
-                                                    Text("알림 받기")
-                                                        .pretendardStyle(.B_17_200)
-                                                        .foregroundStyle(isAllowNotification ? .mono900 : .mono500)
-                                                    
-                                                    Spacer()
-                                                }
-                                            }
-                                            .frame(width: 358, height: 48)
-                                        }
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 8)
-                                                .stroke(isAllowNotification ? .mono900 : .mono200)
-                                        )
-                                    }
-                                }
-                                .padding(.top, 56)
+//                                VStack {
+//                                    HStack(alignment: .lastTextBaseline, spacing: 0) {
+//                                        Text("푸시 알림")
+//                                            .pretendardStyle(.B_20_300)
+//                                            .foregroundStyle(.mono900)
+//                                        Text("(경기 일정, 투표 등록)")
+//                                            .pretendardStyle(.R_17_200)
+//                                            .foregroundStyle(.mono500)
+//                                            .padding(.leading, 5)
+//                                        Spacer()
+//                                    }
+//                                    
+//                                    HStack {
+//                                        Button {
+//                                            isAllowNotification.toggle()
+//                                        } label: {
+//                                            HStack {
+//                                                HStack {
+//                                                    Image(isAllowNotification ? "checkbox_on_icon" : "checkbox_off_icon")
+//                                                        .resizable()
+//                                                        .scaledToFit()
+//                                                        .frame(width: 24, height: 24)
+//                                                }
+//                                                .frame(width: 56, height: 56)
+//                                                
+//                                                HStack {
+//                                                    Text("알림 받기")
+//                                                        .pretendardStyle(.B_17_200)
+//                                                        .foregroundStyle(isAllowNotification ? .mono900 : .mono500)
+//                                                    
+//                                                    Spacer()
+//                                                }
+//                                            }
+//                                            .frame(width: 358, height: 48)
+//                                        }
+//                                        .background(
+//                                            RoundedRectangle(cornerRadius: 8)
+//                                                .stroke(isAllowNotification ? .mono900 : .mono200)
+//                                        )
+//                                    }
+//                                }
+//                                .padding(.top, 56)
                                 .padding(.bottom, 79)
                             }
                             .padding(.horizontal, 16)
