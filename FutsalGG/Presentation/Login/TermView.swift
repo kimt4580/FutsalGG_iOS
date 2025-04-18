@@ -9,6 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct TermView: View {
+    @EnvironmentObject var state: SignUpState
     let store: StoreOf<TermFeature>
     
     var body: some View {
@@ -82,11 +83,8 @@ struct TermView: View {
                         .padding(.bottom, 16)
                     
                     HStack {
-                        NavigationLink {
-                            SignUpView(store: store.scope(
-                                state: \.signUpState,
-                                action: TermFeature.Action.signUp
-                            ))
+                        Button {
+                            state.routeToSignUp()
                         } label: {
                             Text("동의하기")
                                 .foregroundStyle(.white)

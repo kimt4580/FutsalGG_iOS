@@ -1,3 +1,10 @@
+//
+//  TermFeature.swift
+//  FutsalGG
+//
+//  Created by 김태훈 on 4/17/25.
+//
+
 import Foundation
 import ComposableArchitecture
 
@@ -12,6 +19,7 @@ struct TermFeature: Reducer {
         }
     }
     
+    @CasePathable
     enum Action {
         case toggleServiceTerm
         case togglePrivacyTerm
@@ -45,7 +53,7 @@ struct TermFeature: Reducer {
             }
         }
         
-        Scope(state: \.signUpState, action: /Action.signUp) {
+        Scope(state: \.signUpState, action: \.signUp) {
             SignUpFeature()
         }
     }

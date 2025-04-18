@@ -11,6 +11,9 @@ import Combine
 import ComposableArchitecture
 
 struct SignUpView: View {
+    @EnvironmentObject var state: RootState
+    @Environment(\.dismiss) var dismiss
+    
     let store: StoreOf<SignUpFeature>
     
     @State var nickname: String = ""
@@ -630,6 +633,8 @@ struct SignUpView: View {
                         
                         Button {
                             viewStore.send(.confirmSignUpSuccess)
+                            state.routeToMain()
+                            dismiss()
                         } label: {
                             Text("확인")
                                 .foregroundStyle(.white)

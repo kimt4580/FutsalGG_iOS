@@ -22,9 +22,7 @@ struct LoginPage: View {
                 
                 VStack {
                     NavigationLink {
-                        TermView(store: Store(initialState: TermFeature.State()) {
-                            TermFeature()
-                        })
+                        
                     } label: {
                         HStack {
                             Image(systemName: "apple.logo")
