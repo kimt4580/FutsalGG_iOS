@@ -22,7 +22,7 @@ struct LoginPage: View {
                 
                 VStack {
                     NavigationLink {
-                        
+                        SignUpPage()
                     } label: {
                         HStack {
                             Image(systemName: "apple.logo")

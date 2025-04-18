@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject var rootState: RootState = RootState()
+    @ObservedObject var rootState: RootState = RootState()
     
     var body: some View {
         NavigationStack {
@@ -20,8 +20,8 @@ struct RootView: View {
                     MainPage()
                 }
             }
-            .environmentObject(rootState)
         }
+        .environmentObject(rootState)
     }
 }
 
