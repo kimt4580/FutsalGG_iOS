@@ -18,6 +18,8 @@ struct RootView: View {
                     LoginPage()
                 case .main:
                     MainPage()
+                case .splash:
+                    SplashView()
                 }
             }
         }
@@ -30,11 +32,12 @@ struct RootView: View {
 }
 
 class RootState: ObservableObject {
-    @Published private(set) var destination: Destination = .login
+    @Published private(set) var destination: Destination = .main
     
     enum Destination {
         case login
         case main
+        case splash
     }
     
     func routeToLogin() {
@@ -46,6 +49,12 @@ class RootState: ObservableObject {
     func routeToMain() {
         withAnimation {
             destination = .main
+        }
+    }
+    
+    func routeToSplash() {
+        withAnimation {
+            destination = .splash
         }
     }
 }

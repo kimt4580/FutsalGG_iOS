@@ -1,7 +1,7 @@
 {
-  "images" : [
+  "data" : [
     {
-      "filename" : "logo.pdf",
+      "filename" : "spalsh-loading-bar.json",
       "idiom" : "universal"
     }
   ],

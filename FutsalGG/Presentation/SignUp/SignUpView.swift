@@ -95,44 +95,6 @@ struct SignUpView: View {
         isDuplicateChecked = true
     }
     
-    // MARK: - Lottie View
-    struct LottieView: UIViewRepresentable {
-        let name: String
-        let loopMode: LottieLoopMode
-        let completion: (() -> Void)?
-        
-        init(name: String, loopMode: LottieLoopMode = .playOnce, completion: (() -> Void)? = nil) {
-            self.name = name
-            self.loopMode = loopMode
-            self.completion = completion
-        }
-        
-        func makeUIView(context: Context) -> UIView {
-            let view = UIView(frame: .zero)
-            let animationView = LottieAnimationView()
-            animationView.animation = LottieAnimation.named(name)
-            animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = loopMode
-            animationView.play { finished in
-                if finished {
-                    completion?()
-                }
-            }
-            
-            animationView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(animationView)
-            
-            NSLayoutConstraint.activate([
-                animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
-                animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
-            ])
-            
-            return view
-        }
-        
-        func updateUIView(_ uiView: UIView, context: Context) {}
-    }
-    
     // ADD: 생년월일 validation helper
     private func isValidBirthday(_ dateString: String) -> (isValid: Bool, message: String?) {
         // 1. Check basic format (YYYY-MM-DD)
@@ -600,19 +562,9 @@ struct SignUpView: View {
                 }
                 
                 if viewStore.showLoading {
-                    Color.white
-                        .ignoresSafeArea()
-                    
-                    VStack {
-                        LottieView(name: "loading") {
-                            viewStore.send(.hideLoading)
-                            viewStore.send(.signUpSuccess)
-                        }
-                        .frame(width: 190, height: 190)
-                        
-                        Text("잠시만 기다려 주세요")
-                            .pretendardStyle(.B_24_400)
-                            .foregroundStyle(.mono900)
+                    LoadingView {
+                        viewStore.send(.hideLoading)
+                        viewStore.send(.signUpSuccess)
                     }
                 }
                 
@@ -685,3 +637,40 @@ struct SignUpView: View {
 //#Preview {
 //    SignUpView()
 //}
+
+struct LottieView: UIViewRepresentable {
+    let name: String
+    let loopMode: LottieLoopMode
+    let completion: (() -> Void)?
+    
+    init(name: String, loopMode: LottieLoopMode = .playOnce, completion: (() -> Void)? = nil) {
+        self.name = name
+        self.loopMode = loopMode
+        self.completion = completion
+    }
+    
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView(frame: .zero)
+        let animationView = LottieAnimationView()
+        animationView.animation = LottieAnimation.named(name)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = loopMode
+        animationView.play { finished in
+            if finished {
+                completion?()
+            }
+        }
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
+        ])
+        
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {}
+}
