@@ -61,7 +61,7 @@ struct SignUpView: View {
         let profanityWords = ["시발", "씨발", "병신", "새끼", "개새끼", "미친놈", "지랄", "좆밥", "니애미", "느금마", "창녀", "매춘부"]
         if profanityWords.contains(where: { nickname.localizedCaseInsensitiveContains($0) }) {
             showNicknameError = true
-            nicknameErrorMessage = "비속어는 사용하실 수 없습니다."
+            nicknameErrorMessage = "부적절한 단어가 입력되었습니다."
             isDuplicateChecked = false
             isNicknameValid = false
             return false

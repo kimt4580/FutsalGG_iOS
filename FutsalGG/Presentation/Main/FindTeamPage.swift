@@ -18,111 +18,118 @@ struct FindTeamPage: View {
                 VStack {
                     DepthHeader(title: "팀 가입하기")
                     
-                    VStack {
-                        HStack {
-                            Text("가입하고자 하는 팀을 검색해보세요!")
-                                .pretendardStyle(.B_20_300)
+                    if let findTeamState = viewStore.findTeam {
+                        VStack {
+                            HStack {
+                                Text("가입하고자 하는 팀을 검색해보세요!")
+                                    .pretendardStyle(.B_20_300)
+                                    .foregroundStyle(.mono900)
+                                Spacer()
+                            }
+                            
+                            HStack {
+                                TextField(
+                                    "팀 명을 입력해주세요.",
+                                    text: viewStore.binding(
+                                        get: { $0.findTeam?.searchTeamName ?? "" },
+                                        send: { .findTeam(.setSearchTeamName($0)) }
+                                    )
+                                )
+                                .pretendardStyle(.R_17_200)
                                 .foregroundStyle(.mono900)
+                                .frame(height: 48)
+                                .padding(.horizontal, 17)
+                                .onSubmit {
+                                    viewStore.send(.findTeam(.searchTeams))
+                                }
+                                Spacer()
+                                
+                                Button {
+                                    viewStore.send(.findTeam(.searchTeams))
+                                } label: {
+                                    HStack {
+                                        Image("search_icon")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 24, height: 24)
+                                    }
+                                    .frame(width: 48, height: 48)
+                                }
+                            }
+                            .frame(height: 48)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.mono300)
+                            )
+                        }
+                        .padding(.all, 16)
+                        .blackShadowSoft(radius: 0)
+                        
+                        if findTeamState.teams.isEmpty {
                             Spacer()
+                            Image("search_empty_img")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200, height: 196)
+                                .simultaneousGesture(
+                                    TapGesture().onEnded {
+                                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                                    }
+                                )
+                            Spacer()
+                        } else {
+                            ScrollView {
+                                ForEach(findTeamState.teams) { team in
+                                    FindTeamElement(
+                                        store: store,
+                                        teamID: team.id,
+                                        teamName: team.teamName,
+                                        teamLeaderName: team.teamLeaderName,
+                                        teamMemberCount: team.teamMemberCount
+                                    )
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                }
+                            }
+                            .simultaneousGesture(
+                                TapGesture().onEnded {
+                                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                                }
+                            )
                         }
                         
-                        HStack {
-                            TextField("팀 명을 입력해주세요.", text: viewStore.binding(
-                                get: \.searchTeamName,
-                                send: TeamFeature.Action.setSearchTeamName
-                            ))
-                            .pretendardStyle(.R_17_200)
-                            .foregroundStyle(.mono900)
-                            .frame(height: 48)
-                            .padding(.horizontal, 17)
-                            .onSubmit {
-                                viewStore.send(.searchTeams)
-                            }
-                            Spacer()
+                        VStack {
+                            Divider()
+                                .foregroundStyle(.mono200)
+                                .padding(.bottom, 16)
                             
                             Button {
-                                viewStore.send(.searchTeams)
+                                viewStore.send(.findTeam(.joinButtonTapped))
                             } label: {
-                                HStack {
-                                    Image("search_icon")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 24, height: 24)
-                                }
-                                .frame(width: 48, height: 48)
+                                Text("가입 신청하기")
+                                    .foregroundStyle(findTeamState.selectedTeamID != nil ? .white : .mono500)
+                                    .pretendardStyle(.B_20_300)
+                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 48)
                             }
-                        }
-                        .frame(height: 48)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(.mono300)
-                        )
-                    }
-                    .padding(.all, 16)
-                    .blackShadowSoft(radius: 0)
-                    
-                    if viewStore.teams.isEmpty {
-                        Spacer()
-                        Image("search_empty_img")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 196)
-                        Spacer()
-                    } else {
-                        ScrollView {
-                            ForEach(viewStore.teams) { team in
-                                FindTeamElement(
-                                    store: store,
-                                    teamID: team.id,
-                                    teamName: team.teamName,
-                                    teamLeaderName: team.teamLeaderName,
-                                    teamMemberCount: team.teamMemberCount
-                                )
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 8)
-                            }
-                        }
-                    }
-                    
-                    VStack {
-                        Divider()
-                            .foregroundStyle(.mono200)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundStyle(findTeamState.selectedTeamID != nil ? .mono900 : .mono200)
+                            )
+                            .disabled(findTeamState.selectedTeamID == nil)
+                            .padding(.horizontal, 16)
                             .padding(.bottom, 16)
-                        
-                        Button {
-                            viewStore.send(.joinButtonTapped)
-                        } label: {
-                            Text("가입 신청하기")
-                                .foregroundStyle(isCreateEnabled(viewStore) ? .white : .mono500)
-                                .pretendardStyle(.B_20_300)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 48)
                         }
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(isCreateEnabled(viewStore) ? .mono900 : .mono200)
-                        )
-                        .disabled(!isCreateEnabled(viewStore))
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 16)
                     }
                 }
                 
-                if viewStore.showLoading {
-                    LoadingView {
-                        viewStore.send(.hideLoading)
-                        viewStore.send(.joinSuccess)
-                    }
-                }
-                
-                if viewStore.showJoinConfirmation {
+                if let findTeamState = viewStore.findTeam, findTeamState.showJoinConfirmation {
                     Color.black.opacity(0.7)
                         .ignoresSafeArea()
                     
                     VStack {
                         VStack {
-                            if let selectedID = viewStore.selectedTeamID,
-                               let selectedTeam = viewStore.teams.first(where: { $0.id == selectedID }) {
+                            if let selectedTeam = findTeamState.teams.first(where: { $0.id == findTeamState.selectedTeamID }) {
                                 Text("\(selectedTeam.teamName) 팀에")
                                     .pretendardStyle(.B_20_300)
                                     .foregroundStyle(.mono900)
@@ -135,7 +142,7 @@ struct FindTeamPage: View {
                         
                         HStack(spacing: 16) {
                             Button {
-                                viewStore.send(.cancelJoin)
+                                viewStore.send(.findTeam(.cancelJoin))
                             } label: {
                                 Text("취소")
                                     .foregroundStyle(.mono500)
@@ -148,7 +155,7 @@ struct FindTeamPage: View {
                             }
                             
                             Button {
-                                viewStore.send(.confirmJoin)
+                                viewStore.send(.findTeam(.confirmJoin))
                             } label: {
                                 Text("확인")
                                     .foregroundStyle(.white)
@@ -170,7 +177,7 @@ struct FindTeamPage: View {
                     .padding(.horizontal, 16)
                 }
                 
-                if viewStore.showJoinSuccess {
+                if let findTeamState = viewStore.findTeam, findTeamState.showJoinSuccess {
                     Color.black.opacity(0.7)
                         .ignoresSafeArea()
                     
@@ -192,7 +199,7 @@ struct FindTeamPage: View {
                         .padding(.vertical, 16)
                         
                         Button {
-                            viewStore.send(.confirmJoinSuccess)
+                            viewStore.send(.findTeam(.confirmJoinSuccess))
                             dismiss()
                         } label: {
                             Text("확인")
@@ -213,13 +220,23 @@ struct FindTeamPage: View {
                     )
                     .padding(.horizontal, 16)
                 }
+                
+                if viewStore.showLoading {
+                    LoadingView {
+                        viewStore.send(.showLoading(false))
+                        viewStore.send(.findTeam(.joinSuccess))
+                    }
+                }
+            }
+            .onAppear {
+                viewStore.send(.resetFindTeam)
             }
         }
         .navigationBarBackButtonHidden()
     }
     
-    private func isCreateEnabled(_ viewStore: ViewStore<TeamFeature.State, TeamFeature.Action>) -> Bool {
-        return viewStore.selectedTeamID != nil
+    private func isCreateEnabled(_ viewStore: ViewStore<FindTeamFeature.State?, TeamFeature.Action>) -> Bool {
+        return viewStore.state?.selectedTeamID != nil
     }
 }
 
@@ -233,7 +250,7 @@ struct FindTeamElement: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             Button {
-                viewStore.send(.selectTeam(teamID))
+                viewStore.send(.findTeam(.selectTeam(teamID)))
             } label: {
                 VStack {
                     HStack {
@@ -246,7 +263,7 @@ struct FindTeamElement: View {
                     
                     HStack {
                         Text(teamLeaderName)
-                            .foregroundStyle(viewStore.selectedTeamID == teamID ? .mint300 : .mono900)
+                            .foregroundStyle(viewStore.findTeam?.selectedTeamID == teamID ? .mint300 : .mono900)
                         Spacer()
                         
                         HStack {
@@ -255,18 +272,18 @@ struct FindTeamElement: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
-                                .foregroundStyle(viewStore.selectedTeamID == teamID ? .white : .mono500)
+                                .foregroundStyle(viewStore.findTeam?.selectedTeamID == teamID ? .white : .mono500)
                                 .padding(.leading, 3)
                             
                             Text(teamMemberCount)
-                                .foregroundStyle(viewStore.selectedTeamID == teamID ? .white : .mono500)
+                                .foregroundStyle(viewStore.findTeam?.selectedTeamID == teamID ? .white : .mono500)
                                 .pretendardStyle(.R_17_200)
                                 .padding(.trailing, 8)
                         }
                         .frame(width: 56, height: 26)
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(viewStore.selectedTeamID == teamID ? .mint300 : .mono50)
+                                .foregroundStyle(viewStore.findTeam?.selectedTeamID == teamID ? .mint300 : .mono50)
                         )
                     }
                     .padding(.top, 8)
@@ -274,11 +291,11 @@ struct FindTeamElement: View {
                 .padding(.all, 16)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(viewStore.selectedTeamID == teamID ? .mint50 : .white)
+                        .fill(viewStore.findTeam?.selectedTeamID == teamID ? .mint50 : .white)
                 )
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(viewStore.selectedTeamID == teamID ? .mint500 : .mono300)
+                        .stroke(viewStore.findTeam?.selectedTeamID == teamID ? .mint500 : .mono300)
                 )
             }
         }
