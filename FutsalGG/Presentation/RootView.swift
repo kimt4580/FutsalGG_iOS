@@ -32,7 +32,7 @@ struct RootView: View {
 }
 
 class RootState: ObservableObject {
-    @Published private(set) var destination: Destination = .main
+    @Published private(set) var destination: Destination = .splash
     
     enum Destination {
         case login

@@ -11,45 +11,55 @@ import UIKit
 
 struct TeamFeature: Reducer {
     struct State: Equatable {
-        var teamName: String = ""
-        var teamDescription: String = "" {
-            didSet {
-                if teamDescription.count > 20 {
-                    teamDescription = String(teamDescription.prefix(20))
-                }
-            }
+        var teamName: String
+        var teamDescription: String
+        var teamRule: String
+        var selectedManagerRange: ManagerRange?
+        var teamLogoImage: UIImage?
+        var searchTeamName: String
+        var selectedTeamID: String?
+        var selectedGameType: GameType?
+        var membershipFee: String
+        var showDropdown: DropdownType?
+        
+        var showTeamNameError: Bool
+        var teamNameErrorMessage: String
+        var isTeamNameValid: Bool
+        var isDuplicateChecked: Bool
+        var teamNameSuccessMessage: String
+        
+        var showLoading: Bool
+        var makeTeamSuccess: Bool
+        var showJoinSuccess: Bool
+        var showJoinConfirmation: Bool
+        
+        var teams: [Team]
+        
+        init() {
+            self.teamName = ""
+            self.teamDescription = ""
+            self.teamRule = ""
+            self.selectedManagerRange = nil
+            self.teamLogoImage = nil
+            self.searchTeamName = ""
+            self.selectedTeamID = nil
+            self.selectedGameType = nil
+            self.membershipFee = ""
+            self.showDropdown = nil
+            
+            self.showTeamNameError = false
+            self.teamNameErrorMessage = ""
+            self.isTeamNameValid = false
+            self.isDuplicateChecked = false
+            self.teamNameSuccessMessage = ""
+            
+            self.showLoading = false
+            self.makeTeamSuccess = false
+            self.showJoinSuccess = false
+            self.showJoinConfirmation = false
+            
+            self.teams = []
         }
-        var teamRule: String = ""
-        var selectedManagerRange: ManagerRange? = nil
-        var teamLogoImage: UIImage? = nil
-        
-        var selectedGameType: GameType? = nil
-        var membershipFee: String = "" {
-            didSet {
-                if !membershipFee.isEmpty {
-                    // Remove non-numeric characters and limit to 3 digits
-                    let numericString = membershipFee.filter { $0.isNumber }
-                    let trimmed = String(numericString.prefix(3))
-                    // Convert to Int to remove leading zeros, then back to String
-                    if let value = Int(trimmed) {
-                        membershipFee = String(value)
-                    } else {
-                        membershipFee = ""
-                    }
-                }
-            }
-        }
-        var showDropdown: DropdownType? = nil
-        
-        var showTeamNameError: Bool = false
-        var teamNameErrorMessage: String = ""
-        var isTeamNameValid: Bool = false
-        var isDuplicateChecked: Bool = false
-        
-        var teamNameSuccessMessage: String = ""
-        
-        var showLoading: Bool = false
-        var makeTeamSuccess: Bool = false
         
         enum ManagerRange: String, CaseIterable, Equatable {
             case teamLeader = "팀장만"
@@ -73,6 +83,7 @@ struct TeamFeature: Reducer {
         case setTeamName(String)
         case setTeamDescription(String)
         case setTeamRules(String)
+        case setSearchTeamName(String)
         case validateTeamName
         case checkTeamNameDuplicate
         case setManagerRange(State.ManagerRange)
@@ -87,6 +98,16 @@ struct TeamFeature: Reducer {
         case setGameType(State.GameType)
         case setMembershipFee(String)
         case toggleDropdown(State.DropdownType?)
+        case selectTeam(String?)  // 팀 선택 액션 추가
+        
+        case joinButtonTapped
+        case confirmJoin
+        case cancelJoin
+        case joinSuccess
+        case confirmJoinSuccess
+        
+        case searchTeams
+        case clearTeams
     }
     
     @Dependency(\.continuousClock) var clock
@@ -205,9 +226,58 @@ struct TeamFeature: Reducer {
                 }
                 return .none
                 
+            case let .selectTeam(teamId):
+                state.selectedTeamID = teamId
+                return .none
+                
+            case .joinButtonTapped:
+                state.showJoinConfirmation = true
+                return .none
+                
+            case .confirmJoin:
+                state.showJoinConfirmation = false
+                state.showLoading = true
+                return .run { send in
+                    try await clock.sleep(for: .seconds(2))
+                    await send(.hideLoading)
+                    await send(.joinSuccess)
+                }
+                
+            case .cancelJoin:
+                state.showJoinConfirmation = false
+                return .none
+                
+            case .joinSuccess:
+                state.showJoinSuccess = true
+                return .none
+                
+            case .confirmJoinSuccess:
+                state.showJoinSuccess = false
+                return .none
+                
+            case .searchTeams:
+                state.teams = [
+                    Team(id: "1", teamName: "FC Barcelona", teamLeaderName: "메시", teamMemberCount: "11"),
+                    Team(id: "2", teamName: "Real Madrid", teamLeaderName: "호날두", teamMemberCount: "11"),
+                    Team(id: "3", teamName: "맨체스터 시티", teamLeaderName: "홀란드", teamMemberCount: "11"),
+                    Team(id: "4", teamName: "리버풀", teamLeaderName: "살라", teamMemberCount: "11")
+                ]
+                return .none
+                
+            case .clearTeams:
+                state.teams = []
+                return .none
+                
             default:
                 return .none
             }
         }
     }
+}
+
+struct Team: Equatable, Identifiable {
+    let id: String
+    let teamName: String
+    let teamLeaderName: String
+    let teamMemberCount: String
 }

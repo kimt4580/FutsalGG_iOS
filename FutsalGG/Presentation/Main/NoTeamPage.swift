@@ -9,12 +9,15 @@ import SwiftUI
 import ComposableArchitecture
 
 struct NoTeamPage: View {
+    
     var body: some View {
         VStack(spacing: 0) {
             NavigationLink {
-                MakeTeamPage(store: Store(initialState: TeamFeature.State()) {
-                    TeamFeature()
-                })
+                MakeTeamPage(
+                    store: Store(initialState: TeamFeature.State()) {
+                        TeamFeature()
+                    }
+                )
             } label: {
                 ZStack {
                     Image("make_team_img")
@@ -30,8 +33,12 @@ struct NoTeamPage: View {
                 }
             }
             
-            Button {
-                
+            NavigationLink {
+                FindTeamPage(
+                    store: Store(initialState: TeamFeature.State()) {
+                        TeamFeature()
+                    }
+                )
             } label: {
                 ZStack {
                     Image("join_team_img")

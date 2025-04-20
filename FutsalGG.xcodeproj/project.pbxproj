@@ -117,6 +117,10 @@
 		D61F06132DB416DB002483D7 /* main_ios.png in Resources */ = {isa = PBXBuildFile; fileRef = D61F06122DB416DB002483D7 /* main_ios.png */; };
 		D61F06152DB419EF002483D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F06142DB419EF002483D7 /* LoadingView.swift */; };
 		D61F06172DB41B6F002483D7 /* default_team_logo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F06162DB41B6F002483D7 /* default_team_logo.pdf */; };
+		D61F06192DB465F8002483D7 /* FindTeamPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F06182DB465F8002483D7 /* FindTeamPage.swift */; };
+		D61F061B2DB466BC002483D7 /* search_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F061A2DB466BC002483D7 /* search_icon.pdf */; };
+		D61F061D2DB466E6002483D7 /* list_profile_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F061C2DB466E6002483D7 /* list_profile_icon.pdf */; };
+		D61F061F2DB47B63002483D7 /* search_empty_img.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F061E2DB47B63002483D7 /* search_empty_img.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +225,10 @@
 		D61F06122DB416DB002483D7 /* main_ios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_ios.png; sourceTree = "<group>"; };
 		D61F06142DB419EF002483D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		D61F06162DB41B6F002483D7 /* default_team_logo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = default_team_logo.pdf; sourceTree = "<group>"; };
+		D61F06182DB465F8002483D7 /* FindTeamPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamPage.swift; sourceTree = "<group>"; };
+		D61F061A2DB466BC002483D7 /* search_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = search_icon.pdf; sourceTree = "<group>"; };
+		D61F061C2DB466E6002483D7 /* list_profile_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = list_profile_icon.pdf; sourceTree = "<group>"; };
+		D61F061E2DB47B63002483D7 /* search_empty_img.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = search_empty_img.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,7 +330,6 @@
 		8A3E23002D8BA56000EA1646 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D61F06122DB416DB002483D7 /* main_ios.png */,
 				8A3E23012D8BA56000EA1646 /* Assets.xcassets */,
 				8AEFAF682D93E2FE00003B36 /* Images */,
 				8A3E22FF2D8BA56000EA1646 /* Fonts */,
@@ -617,10 +624,14 @@
 		8AEFAF682D93E2FE00003B36 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D61F061C2DB466E6002483D7 /* list_profile_icon.pdf */,
 				D61F06162DB41B6F002483D7 /* default_team_logo.pdf */,
 				D61F06022DB346E2002483D7 /* join_team_img.pdf */,
 				D61F06032DB346E2002483D7 /* make_team_img.pdf */,
 				8AEFAF672D93E2FE00003B36 /* Logo */,
+				D61F061E2DB47B63002483D7 /* search_empty_img.pdf */,
+				D61F061A2DB466BC002483D7 /* search_icon.pdf */,
+				D61F06122DB416DB002483D7 /* main_ios.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -656,6 +667,7 @@
 				D61F06062DB3479C002483D7 /* HomePage.swift */,
 				D61F06082DB347A4002483D7 /* NoTeamPage.swift */,
 				D61F060A2DB34F48002483D7 /* MakeTeamPage.swift */,
+				D61F06182DB465F8002483D7 /* FindTeamPage.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -761,8 +773,10 @@
 				8A3E230B2D8BA56000EA1646 /* Pretendard-ExtraLight.otf in Resources */,
 				8A84BBA52D8CECA800942D94 /* Preview Assets.xcassets in Resources */,
 				D61F06132DB416DB002483D7 /* main_ios.png in Resources */,
+				D61F061D2DB466E6002483D7 /* list_profile_icon.pdf in Resources */,
 				8A6015FB2DAE4062001C8445 /* checkbox_off.pdf in Resources */,
 				8A6015FC2DAE4062001C8445 /* checkbox_on.pdf in Resources */,
+				D61F061F2DB47B63002483D7 /* search_empty_img.pdf in Resources */,
 				8AC8D1D32DAF8073005FA2E9 /* add_image_icon.pdf in Resources */,
 				8AC8D1D42DAF8073005FA2E9 /* default_profile_img.pdf in Resources */,
 				8A6015E82DADE960001C8445 /* login_background.pdf in Resources */,
@@ -770,6 +784,7 @@
 				8A3E230C2D8BA56000EA1646 /* Pretendard-Light.otf in Resources */,
 				8A3E230D2D8BA56000EA1646 /* Pretendard-Medium.otf in Resources */,
 				8A3E230E2D8BA56000EA1646 /* Pretendard-Regular.otf in Resources */,
+				D61F061B2DB466BC002483D7 /* search_icon.pdf in Resources */,
 				8A3E230F2D8BA56000EA1646 /* Pretendard-SemiBold.otf in Resources */,
 				8AC8D1CE2DAF6A28005FA2E9 /* calendar_icon.pdf in Resources */,
 				8A3E23102D8BA56000EA1646 /* Pretendard-Thin.otf in Resources */,
@@ -824,6 +839,7 @@
 				8A04BCD52D9BC3DF0016A0C5 /* MyInfoResponse.swift in Sources */,
 				8A3E23222D8CE59700EA1646 /* LoginPage.swift in Sources */,
 				8AEFAF6C2D93F02700003B36 /* TeamEndpoint.swift in Sources */,
+				D61F06192DB465F8002483D7 /* FindTeamPage.swift in Sources */,
 				8A821E1F2D96557900168D69 /* ImageUploadURLResponseDTO.swift in Sources */,
 				8A04BCCC2D9B9FFA0016A0C5 /* MatchResponse.swift in Sources */,
 				8A04BCC02D9B9AF60016A0C5 /* MatchResponseElement.swift in Sources */,

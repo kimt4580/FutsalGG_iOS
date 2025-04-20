@@ -25,7 +25,7 @@ struct SplashView: View {
             
             LottieView(name: "spalsh_loading_bar") {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    rootState.routeToLogin()
+                    rootState.routeToMain()
                 }
             }
             .frame(height: 8)
