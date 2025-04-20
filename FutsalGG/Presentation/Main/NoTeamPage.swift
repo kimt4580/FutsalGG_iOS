@@ -13,10 +13,14 @@ struct NoTeamPage: View {
         NavigationStack {
             VStack(spacing: 0) {
                 NavigationLink {
-                    let teamStore = Store(initialState: TeamFeature.State()) {
-                        TeamFeature()
+//                    let teamStore = Store(initialState: TeamFeature.State()) {
+//                        TeamFeature()
+//                    }
+//                    MakeTeamPage(store: teamStore)
+                    let store = Store(initialState: CreateMatchFeature.State()) {
+                        CreateMatchFeature()
                     }
-                    MakeTeamPage(store: teamStore)
+                    CreateMatchView(store: store)
                 } label: {
                     ZStack {
                         Image("make_team_img")

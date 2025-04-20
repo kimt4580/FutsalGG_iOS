@@ -126,6 +126,15 @@
 		D61F06252DB489EA002483D7 /* NoTeamFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F06242DB489EA002483D7 /* NoTeamFeature.swift */; };
 		D61F06272DB494C8002483D7 /* MakeTeamFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F06262DB494C8002483D7 /* MakeTeamFeature.swift */; };
 		D61F06292DB494DA002483D7 /* FindTeamFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F06282DB494DA002483D7 /* FindTeamFeature.swift */; };
+		D61F062B2DB4AA0F002483D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F062A2DB4AA0F002483D7 /* MainView.swift */; };
+		D61F062D2DB4AAAE002483D7 /* setting_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F062C2DB4AAAE002483D7 /* setting_icon.pdf */; };
+		D61F06312DB4AB2E002483D7 /* my_info_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F062E2DB4AB2E002483D7 /* my_info_icon.pdf */; };
+		D61F06322DB4AB2E002483D7 /* record_tab_img.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F062F2DB4AB2E002483D7 /* record_tab_img.pdf */; };
+		D61F06332DB4AB2E002483D7 /* team_info_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F06302DB4AB2E002483D7 /* team_info_icon.pdf */; };
+		D61F06362DB4AC93002483D7 /* badge_admin_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F06342DB4AC93002483D7 /* badge_admin_icon.pdf */; };
+		D61F06372DB4AC93002483D7 /* badge_sub_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D61F06352DB4AC93002483D7 /* badge_sub_icon.pdf */; };
+		D61F06392DB4E084002483D7 /* CreateMatchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F06382DB4E084002483D7 /* CreateMatchFeature.swift */; };
+		D61F063B2DB4E0A3002483D7 /* CreateMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F063A2DB4E0A3002483D7 /* CreateMatchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,6 +248,15 @@
 		D61F06242DB489EA002483D7 /* NoTeamFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTeamFeature.swift; sourceTree = "<group>"; };
 		D61F06262DB494C8002483D7 /* MakeTeamFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamFeature.swift; sourceTree = "<group>"; };
 		D61F06282DB494DA002483D7 /* FindTeamFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamFeature.swift; sourceTree = "<group>"; };
+		D61F062A2DB4AA0F002483D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D61F062C2DB4AAAE002483D7 /* setting_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = setting_icon.pdf; sourceTree = "<group>"; };
+		D61F062E2DB4AB2E002483D7 /* my_info_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = my_info_icon.pdf; sourceTree = "<group>"; };
+		D61F062F2DB4AB2E002483D7 /* record_tab_img.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = record_tab_img.pdf; sourceTree = "<group>"; };
+		D61F06302DB4AB2E002483D7 /* team_info_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = team_info_icon.pdf; sourceTree = "<group>"; };
+		D61F06342DB4AC93002483D7 /* badge_admin_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = badge_admin_icon.pdf; sourceTree = "<group>"; };
+		D61F06352DB4AC93002483D7 /* badge_sub_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = badge_sub_icon.pdf; sourceTree = "<group>"; };
+		D61F06382DB4E084002483D7 /* CreateMatchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchFeature.swift; sourceTree = "<group>"; };
+		D61F063A2DB4E0A3002483D7 /* CreateMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +473,7 @@
 				D61F06242DB489EA002483D7 /* NoTeamFeature.swift */,
 				D61F06262DB494C8002483D7 /* MakeTeamFeature.swift */,
 				D61F06282DB494DA002483D7 /* FindTeamFeature.swift */,
+				D61F06382DB4E084002483D7 /* CreateMatchFeature.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -639,6 +658,12 @@
 		8AEFAF682D93E2FE00003B36 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D61F06342DB4AC93002483D7 /* badge_admin_icon.pdf */,
+				D61F06352DB4AC93002483D7 /* badge_sub_icon.pdf */,
+				D61F062E2DB4AB2E002483D7 /* my_info_icon.pdf */,
+				D61F062F2DB4AB2E002483D7 /* record_tab_img.pdf */,
+				D61F06302DB4AB2E002483D7 /* team_info_icon.pdf */,
+				D61F062C2DB4AAAE002483D7 /* setting_icon.pdf */,
 				D61F061C2DB466E6002483D7 /* list_profile_icon.pdf */,
 				D61F06162DB41B6F002483D7 /* default_team_logo.pdf */,
 				D61F06022DB346E2002483D7 /* join_team_img.pdf */,
@@ -683,6 +708,8 @@
 				D61F06082DB347A4002483D7 /* NoTeamPage.swift */,
 				D61F060A2DB34F48002483D7 /* MakeTeamPage.swift */,
 				D61F06182DB465F8002483D7 /* FindTeamPage.swift */,
+				D61F062A2DB4AA0F002483D7 /* MainView.swift */,
+				D61F063A2DB4E0A3002483D7 /* CreateMatchView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -790,7 +817,12 @@
 				D61F06132DB416DB002483D7 /* main_ios.png in Resources */,
 				D61F061D2DB466E6002483D7 /* list_profile_icon.pdf in Resources */,
 				8A6015FB2DAE4062001C8445 /* checkbox_off.pdf in Resources */,
+				D61F06362DB4AC93002483D7 /* badge_admin_icon.pdf in Resources */,
+				D61F06372DB4AC93002483D7 /* badge_sub_icon.pdf in Resources */,
 				8A6015FC2DAE4062001C8445 /* checkbox_on.pdf in Resources */,
+				D61F06312DB4AB2E002483D7 /* my_info_icon.pdf in Resources */,
+				D61F06322DB4AB2E002483D7 /* record_tab_img.pdf in Resources */,
+				D61F06332DB4AB2E002483D7 /* team_info_icon.pdf in Resources */,
 				D61F061F2DB47B63002483D7 /* search_empty_img.pdf in Resources */,
 				8AC8D1D32DAF8073005FA2E9 /* add_image_icon.pdf in Resources */,
 				8AC8D1D42DAF8073005FA2E9 /* default_profile_img.pdf in Resources */,
@@ -801,6 +833,7 @@
 				8A3E230E2D8BA56000EA1646 /* Pretendard-Regular.otf in Resources */,
 				D61F061B2DB466BC002483D7 /* search_icon.pdf in Resources */,
 				8A3E230F2D8BA56000EA1646 /* Pretendard-SemiBold.otf in Resources */,
+				D61F062D2DB4AAAE002483D7 /* setting_icon.pdf in Resources */,
 				8AC8D1CE2DAF6A28005FA2E9 /* calendar_icon.pdf in Resources */,
 				8A3E23102D8BA56000EA1646 /* Pretendard-Thin.otf in Resources */,
 				D61F06042DB346E2002483D7 /* join_team_img.pdf in Resources */,
@@ -819,6 +852,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ABA1ADB2DADDD2B002223F0 /* MimeTyper.swift in Sources */,
+				D61F06392DB4E084002483D7 /* CreateMatchFeature.swift in Sources */,
 				8ADFA17F2DA62A250098E1D5 /* CommentEndpoint.swift in Sources */,
 				8AC71AEA2DA359500088E898 /* TeamMember.swift in Sources */,
 				8A821E272D96845800168D69 /* MainResponse.swift in Sources */,
@@ -841,6 +875,7 @@
 				8ADFA17D2DA60BA90098E1D5 /* VoteEndpoint.swift in Sources */,
 				8ACC68E62D915822001D49C0 /* LoginRequest.swift in Sources */,
 				8A821E212D96616D00168D69 /* TeamSearchResponseDTO.swift in Sources */,
+				D61F063B2DB4E0A3002483D7 /* CreateMatchView.swift in Sources */,
 				D61F06292DB494DA002483D7 /* FindTeamFeature.swift in Sources */,
 				8A6015F12DADF42A001C8445 /* DepthHeader.swift in Sources */,
 				8A79A9642D925A06005D7BD5 /* AppConstant.swift in Sources */,
@@ -891,6 +926,7 @@
 				D61F06152DB419EF002483D7 /* LoadingView.swift in Sources */,
 				8ADFA1832DA633920098E1D5 /* CommentResponseDTO.swift in Sources */,
 				8A79A96A2D925A6D005D7BD5 /* TokenRefreshResponseDTO.swift in Sources */,
+				D61F062B2DB4AA0F002483D7 /* MainView.swift in Sources */,
 				8AC71AF02DA3A9DA0088E898 /* RoleDTO.swift in Sources */,
 				8ABA2A492DA4AEA100B67A4F /* MatchMemoResponseDTO.swift in Sources */,
 				8A04BCD32D9BC3260016A0C5 /* MyInfoResponseDTO.swift in Sources */,
