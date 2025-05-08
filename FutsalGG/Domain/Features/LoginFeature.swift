@@ -9,6 +9,8 @@ import Foundation
 import ComposableArchitecture
 
 struct LoginFeature: Reducer {
+    
+    @ObservableState
     struct State: Equatable {
         var signUpState = SignUpFeature.State()
         // ... other login states

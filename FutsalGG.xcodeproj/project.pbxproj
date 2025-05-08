@@ -16,6 +16,8 @@
 		8A04BCCE2D9BA0040016A0C5 /* MatchResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCCD2D9BA0040016A0C5 /* MatchResponseDTO.swift */; };
 		8A04BCD32D9BC3260016A0C5 /* MyInfoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCD22D9BC3260016A0C5 /* MyInfoResponseDTO.swift */; };
 		8A04BCD52D9BC3DF0016A0C5 /* MyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04BCD42D9BC3DF0016A0C5 /* MyInfoResponse.swift */; };
+		8A2861262DCB1370009F89AC /* SearchSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2861252DCB1370009F89AC /* SearchSelectView.swift */; };
+		8A28612E2DCB1752009F89AC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8A28612D2DCB1752009F89AC /* SDWebImageSwiftUI */; };
 		8A3E22CF2D8BA3A600EA1646 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22CE2D8BA3A600EA1646 /* ComposableArchitecture */; };
 		8A3E22D22D8BA3CD00EA1646 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D12D8BA3CD00EA1646 /* CombineMoya */; };
 		8A3E22D42D8BA3CD00EA1646 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3E22D32D8BA3CD00EA1646 /* Moya */; };
@@ -147,6 +149,7 @@
 		8A04BCCD2D9BA0040016A0C5 /* MatchResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponseDTO.swift; sourceTree = "<group>"; };
 		8A04BCD22D9BC3260016A0C5 /* MyInfoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoResponseDTO.swift; sourceTree = "<group>"; };
 		8A04BCD42D9BC3DF0016A0C5 /* MyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoResponse.swift; sourceTree = "<group>"; };
+		8A2861252DCB1370009F89AC /* SearchSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSelectView.swift; sourceTree = "<group>"; };
 		8A3E22AA2D8B89DB00EA1646 /* FutsalGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutsalGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3E22F62D8BA56000EA1646 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		8A3E22F72D8BA56000EA1646 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -264,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A28612E2DCB1752009F89AC /* SDWebImageSwiftUI in Frameworks */,
 				8ABFCCB82DB0B47600B183FA /* Mantis in Frameworks */,
 				8A79A9A22D927742005D7BD5 /* KeychainSwift in Frameworks */,
 				8A3E22DF2D8BA42E00EA1646 /* FirebaseMessaging in Frameworks */,
@@ -321,6 +325,13 @@
 				8A04BCD22D9BC3260016A0C5 /* MyInfoResponseDTO.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		8A2861242DCB0BF1009F89AC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		8A3E22A12D8B89DB00EA1646 = {
@@ -386,6 +397,7 @@
 		8A3E23132D8BA59100EA1646 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8A2861242DCB0BF1009F89AC /* Utilities */,
 				8AEFAF4D2D938DDB00003B36 /* RootView.swift */,
 				8A6015F02DADF42A001C8445 /* Common */,
 				D61F05F52DB34405002483D7 /* Main */,
@@ -457,6 +469,7 @@
 				8AC8D1C92DAF3F94005FA2E9 /* CalendarView.swift */,
 				8ABFCCB42DB0839A00B183FA /* ImagePicker.swift */,
 				D61F06142DB419EF002483D7 /* LoadingView.swift */,
+				8A2861252DCB1370009F89AC /* SearchSelectView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -754,6 +767,7 @@
 				8A79A9A12D927742005D7BD5 /* KeychainSwift */,
 				8ABFCCB72DB0B47600B183FA /* Mantis */,
 				8ABFCCBA2DB0BD0200B183FA /* Lottie */,
+				8A28612D2DCB1752009F89AC /* SDWebImageSwiftUI */,
 			);
 			productName = FutsalGG;
 			productReference = 8A3E22AA2D8B89DB00EA1646 /* FutsalGG.app */;
@@ -790,6 +804,7 @@
 				8A79A9A02D927742005D7BD5 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				8ABFCCB62DB0B47600B183FA /* XCRemoteSwiftPackageReference "Mantis" */,
 				8ABFCCB92DB0BD0200B183FA /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				8A28612C2DCB1752009F89AC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8A3E22AB2D8B89DB00EA1646 /* Products */;
@@ -884,6 +899,7 @@
 				8AC71AE82DA3591C0088E898 /* TeamMemberDTO.swift in Sources */,
 				8AEFAF4E2D938DDB00003B36 /* RootView.swift in Sources */,
 				D61F06232DB48799002483D7 /* MainFeature.swift in Sources */,
+				8A2861262DCB1370009F89AC /* SearchSelectView.swift in Sources */,
 				8ABFCCB52DB0839A00B183FA /* ImagePicker.swift in Sources */,
 				8A821E1B2D96556A00168D69 /* ImageUploadURLResponse.swift in Sources */,
 				8A79A9972D926917005D7BD5 /* NetworkService.swift in Sources */,
@@ -1162,6 +1178,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8A28612C2DCB1752009F89AC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
 		8A3E22CD2D8BA3A600EA1646 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -1213,6 +1237,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8A28612D2DCB1752009F89AC /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A28612C2DCB1752009F89AC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		8A3E22CE2D8BA3A600EA1646 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8A3E22CD2D8BA3A600EA1646 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

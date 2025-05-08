@@ -10,6 +10,8 @@ import ComposableArchitecture
 import UIKit
 
 struct SignUpFeature: Reducer {
+    
+    @ObservableState
     struct State: Equatable {
         var nickname: String = ""
         var birthday: String = ""
@@ -32,7 +34,9 @@ struct SignUpFeature: Reducer {
         }
     }
     
-    enum Action: Equatable {
+    @CasePathable
+    enum Action: BindableAction, Equatable {
+        case binding(BindingAction<State>)
         case setNickname(String)
         case validateNickname
         case checkNicknameDuplicate
@@ -52,6 +56,8 @@ struct SignUpFeature: Reducer {
     @Dependency(\.continuousClock) var clock
     
     var body: some ReducerOf<Self> {
+        BindingReducer()
+        
         Reduce { state, action in
             switch action {
             case .signUpButtonTapped:

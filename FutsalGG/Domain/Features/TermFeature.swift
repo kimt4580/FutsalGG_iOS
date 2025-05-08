@@ -9,6 +9,8 @@ import Foundation
 import ComposableArchitecture
 
 struct TermFeature: Reducer {
+    
+    @ObservableState
     struct State: Equatable {
         var isServiceTermChecked: Bool = false
         var isPrivacyTermChecked: Bool = false
@@ -20,7 +22,8 @@ struct TermFeature: Reducer {
     }
     
     @CasePathable
-    enum Action {
+    enum Action: BindableAction, Equatable {
+        case binding(BindingAction<State>)
         case toggleServiceTerm
         case togglePrivacyTerm
         case toggleAllTerms
@@ -29,8 +32,13 @@ struct TermFeature: Reducer {
     }
     
     var body: some ReducerOf<Self> {
+        BindingReducer()
+        
         Reduce { state, action in
             switch action {
+            case .binding:
+                return .none
+                
             case .toggleServiceTerm:
                 state.isServiceTermChecked.toggle()
                 return .none

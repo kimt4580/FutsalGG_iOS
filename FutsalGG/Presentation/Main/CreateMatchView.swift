@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct CreateMatchView: View {
-    let store: StoreOf<CreateMatchFeature>
+    var store: StoreOf<CreateMatchFeature>
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -269,6 +269,52 @@ struct CreateMatchView: View {
                                 }
                             }
                             .padding(.top, 56)
+                            
+                            VStack {
+                                HStack {
+                                    Text("대리 기록자 선택")
+                                        .pretendardStyle(.B_20_300)
+                                        .foregroundStyle(.mono900)
+                                    Spacer()
+                                }
+                                
+                                HStack {
+//                                    TextField(
+//                                        "닉네임을 입력해주세요.",
+//                                        text: viewStore.binding(
+//                                            get: { $0.findTeam?.searchTeamName ?? "" },
+//                                            send: { .findTeam(.setSearchTeamName($0)) }
+//                                        )
+//                                    )
+//                                    .pretendardStyle(.R_17_200)
+//                                    .foregroundStyle(.mono900)
+//                                    .frame(height: 48)
+//                                    .padding(.horizontal, 17)
+//                                    .onSubmit {
+//                                        viewStore.send(.findTeam(.searchTeams))
+//                                    }
+                                    Spacer()
+                                    
+                                    Button {
+//                                        viewStore.send(.findTeam(.searchTeams))
+                                    } label: {
+                                        HStack {
+                                            Image("search_icon")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 24, height: 24)
+                                        }
+                                        .frame(width: 48, height: 48)
+                                    }
+                                }
+                                .frame(height: 48)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(.mono300)
+                                )
+                            }
+                            .padding(.all, 16)
+                            .blackShadowSoft(radius: 0)
                         }
                         .padding(.horizontal, 16)
                         
@@ -318,7 +364,7 @@ struct CreateMatchView: View {
                                 ),
                                 dateRestriction: .disallowPast
                             ) {
-                                viewStore.$showCalendar.wrappedValue.toggle()
+                                viewStore.send(.showCalendar)
                             }
                             .background(
                                 RoundedRectangle(cornerRadius: 16)

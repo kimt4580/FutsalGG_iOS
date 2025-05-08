@@ -10,9 +10,11 @@ import ComposableArchitecture
 import UIKit
 
 struct TeamFeature: Reducer {
+    
+    @ObservableState
     struct State: Equatable {
-        @BindingState var makeTeam: MakeTeamFeature.State? = nil
-        @BindingState var findTeam: FindTeamFeature.State? = nil
+        var makeTeam: MakeTeamFeature.State? = nil
+        var findTeam: FindTeamFeature.State? = nil
         var showLoading: Bool = false
     }
     

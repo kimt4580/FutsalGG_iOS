@@ -10,6 +10,8 @@ import ComposableArchitecture
 import UIKit
 
 struct MakeTeamFeature: Reducer {
+    
+    @ObservableState
     struct State: Equatable {
         var teamName: String = ""
         var teamDescription: String = ""
@@ -36,7 +38,9 @@ struct MakeTeamFeature: Reducer {
         }
     }
     
-    enum Action: Equatable {
+    @CasePathable
+    enum Action: BindableAction, Equatable {
+        case binding(BindingAction<State>)
         case setTeamName(String)
         case setTeamDescription(String)
         case setTeamRules(String)
@@ -54,8 +58,13 @@ struct MakeTeamFeature: Reducer {
     @Dependency(\.continuousClock) var clock
     
     var body: some ReducerOf<Self> {
+        BindingReducer()
+        
         Reduce { state, action in
             switch action {
+            case .binding:
+                return .none
+                
             case let .setTeamName(name):
                 state.teamName = name
                 state.isDuplicateChecked = false

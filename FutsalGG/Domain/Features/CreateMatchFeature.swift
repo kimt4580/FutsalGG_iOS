@@ -8,16 +8,18 @@
 import Foundation
 import ComposableArchitecture
 
-@Reducer
-struct CreateMatchFeature {
+struct CreateMatchFeature: Reducer {
+    @ObservableState
     struct State: Equatable {
-        @BindingState var date: String = ""
-        @BindingState var location: String = ""
-        @BindingState var startTime: String = ""
-        @BindingState var endTime: String = ""
-        @BindingState var showCalendar: Bool = false
-        @BindingState var isStartTimeExpanded: Bool = false
-        @BindingState var isEndTimeExpanded: Bool = false
+        var date: String = ""
+        var location: String = ""
+        var startTime: String = ""
+        var endTime: String = ""
+        var showCalendar: Bool = false
+        var showSearchSheet: Bool = false
+        var isStartTimeExpanded: Bool = false
+        var isEndTimeExpanded: Bool = false
+        
         var dateError: String? = nil
         var locationError: String? = nil
         var showLoading: Bool = false
@@ -109,6 +111,7 @@ struct CreateMatchFeature {
         case hideLoading
         case createSuccess
         case confirmCreateSuccess
+        case searchDeputyRecorder
         case reset
     }
     
@@ -172,6 +175,8 @@ struct CreateMatchFeature {
                 
             case .reset:
                 state = .init()
+                return .none
+            case .searchDeputyRecorder:
                 return .none
             }
         }
